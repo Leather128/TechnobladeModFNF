@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="technoblade-angry_assets.png">
+	<!-- Created with Visual Studio Code -->
+
+	<!--Down Note Stuff-->
+	<SubTexture name="techno down0000" x="5" y="5" width="259" height="312"/>
+	<SubTexture name="techno down0001" x="274" y="5" width="274" height="289" frameX = "0" frameY = "-23" frameWidth = "274" frameHeight = "289"/>
+	<SubTexture name="techno down0002" x="558" y="5" width="278" height="276" frameX = "0" frameY = "-36" frameWidth = "278" frameHeight = "276"/>
+	<SubTexture name="techno down0003" x="274" y="5" width="274" height="289" frameX = "0" frameY = "-23" frameWidth = "274" frameHeight = "289"/>
+	<SubTexture name="techno down0004" x="5" y="5" width="259" height="312"/>
+
+	<!--Left Note Stuff-->
+	<SubTexture name="techno left0000" x="653" y="632" width="249" height="313"/>
+	<SubTexture name="techno left0001" x="912" y="632" width="254" height="313" frameX = "0" frameY = "0" frameWidth = "254" frameHeight = "313"/>
+	<SubTexture name="techno left0002" x="1176" y="632" width="279" height="299" frameX = "0" frameY = "-20" frameWidth = "279" frameHeight = "299"/>
+	<SubTexture name="techno left0003" x="912" y="632" width="254" height="313" frameX = "0" frameY = "0" frameWidth = "254" frameHeight = "313"/>
+	<SubTexture name="techno left0004" x="653" y="632" width="249" height="313"/>
+
+	<!--Right Note Stuff-->
+	<SubTexture name="techno right0000" x="1399" y="5" width="271" height="312"/>
+	<SubTexture name="techno right0001" x="1465" y="327" width="282" height="304" frameX = "0" frameY = "-8" frameWidth = "282" frameHeight = "304"/>
+	<SubTexture name="techno right0002" x="1465" y="641" width="293" height="295" frameX = "0" frameY = "-15" frameWidth = "293" frameHeight = "295"/>
+	<SubTexture name="techno right0003" x="1435" y="946" width="282" height="304" frameX = "0" frameY = "-8" frameWidth = "282" frameHeight = "304"/>
+	<SubTexture name="techno right0004" x="1399" y="5" width="271" height="312"/>
+
+	<!--Up Note Stuff-->
+	<SubTexture name="techno up0000" x="550" y="1260" width="266" height="312"/>
+	<SubTexture name="techno up0001" x="826" y="1260" width="249" height="333" frameX = "0" frameY = "21" frameWidth = "249" frameHeight = "333"/>
+	<SubTexture name="techno up0002" x="1435" y="1260" width="233" height="347" frameX = "0" frameY = "35" frameWidth = "233" frameHeight = "347"/>
+	<SubTexture name="techno up0003" x="826" y="1260" width="249" height="333" frameX = "0" frameY = "21" frameWidth = "249" frameHeight = "333"/>
+	<SubTexture name="techno up0004" x="550" y="1260" width="266" height="312"/>
+
+	<!--Idle Stuff-->
+	<SubTexture name="techno idle0000" x="5" y="327" width="314" height="312"/>
+	<SubTexture name="techno idle0001" x="329" y="327" width="320" height="295" frameX = "0" frameY = "-10" frameWidth = "320" frameHeight = "295"/>
+	<SubTexture name="techno idle0002" x="659" y="327" width="337" height="279" frameX = "0" frameY = "-26" frameWidth = "337" frameHeight = "279"/>
+	<SubTexture name="techno idle0003" x="329" y="327" width="320" height="295" frameX = "0" frameY = "-10" frameWidth = "320" frameHeight = "295"/>
+	<SubTexture name="techno idle0004" x="5" y="327" width="314" height="312"/>
+</TextureAtlas>
