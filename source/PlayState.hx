@@ -402,11 +402,11 @@ class PlayState extends MusicBeatState
 			// yes better code go brrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
 			case 'technoblade':
 				camPos.x += 600;
-				dad.y += 350;
+				dad.y += 250;
 
 			case 'technoblade-angry':
 				camPos.x += 550;
-				dad.y += 350;
+				dad.y += 250;
 				dad.x += 50;
 		}
 
