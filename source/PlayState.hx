@@ -400,7 +400,7 @@ class PlayState extends MusicBeatState
 				camPos.x += 400;
 
 			// yes better code go brrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
-			case 'technoblade' | 'technoblade-mad':
+			case 'technoblade':
 				camPos.x += 600;
 				dad.y += 350;
 
