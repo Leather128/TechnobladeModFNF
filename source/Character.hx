@@ -143,7 +143,7 @@ class Character extends FlxSprite
 				frames = Paths.getSparrowAtlas('Technoblade', 'technoWeek');
 				animation.addByPrefix('idle', 'Ridle', 12);
 		
-				animation.addByPrefix('singUP', 'Rup', 24);
+				animation.addByPrefix('singUP', 'Rup', 24, false);
 				animation.addByPrefix('singRIGHT', 'Rright', 24, false);
 				animation.addByPrefix('singDOWN', 'Rdown', 24, false);
 				animation.addByPrefix('singLEFT', 'Rleft', 24, false);
