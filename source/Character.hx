@@ -120,13 +120,13 @@ class Character extends FlxSprite
 				flipX = true;
 
 			case 'technoblade':
-				frames = Paths.getSparrowAtlas('technoblade_assets', 'technoWeek');
-				animation.addByPrefix('idle', 'techno idle', 12);
+				frames = Paths.getSparrowAtlas('Technoblade', 'technoWeek');
+				animation.addByPrefix('idle', 'Tidle', 12);
 
-				animation.addByPrefix('singUP', 'techno up', 15);
-				animation.addByPrefix('singRIGHT', 'techno right', 15);
-				animation.addByPrefix('singDOWN', 'techno down', 15);
-				animation.addByPrefix('singLEFT', 'techno left', 15);
+				animation.addByPrefix('singUP', 'Tup', 15, false);
+				animation.addByPrefix('singRIGHT', 'Tright', 15, false);
+				animation.addByPrefix('singDOWN', 'Tdown', 15, false);
+				animation.addByPrefix('singLEFT', 'Tleft', 15, false);
 
 				addOffset('idle');
 				addOffset("singUP");
@@ -134,39 +134,19 @@ class Character extends FlxSprite
 				addOffset("singLEFT", -12, 0);
 				addOffset("singDOWN");
 	
-				setGraphicSize(Std.int(width * 1.5));
-				updateHitbox();
+				setGraphicSize(Std.int(width * 1));
+				//updateHitbox();
 
-				playAnim('idle');
-
-			case 'technoblade-mad':
-				frames = Paths.getSparrowAtlas('technoblade-mad_assets', 'technoWeek');
-				animation.addByPrefix('idle', 'techno idle', 12);
-	
-				animation.addByPrefix('singUP', 'techno up', 18);
-				animation.addByPrefix('singRIGHT', 'techno right', 18);
-				animation.addByPrefix('singDOWN', 'techno down', 18);
-				animation.addByPrefix('singLEFT', 'techno left', 18);
-	
-				addOffset('idle');
-				addOffset("singUP");
-				addOffset("singRIGHT", 12, 0);
-				addOffset("singLEFT", -12, 0);
-				addOffset("singDOWN");
-		
-				setGraphicSize(Std.int(width * 1.5));
-				updateHitbox();
-	
 				playAnim('idle');
 
 			case 'technoblade-angry':
-				frames = Paths.getSparrowAtlas('technoblade-angry_assets', 'technoWeek');
-				animation.addByPrefix('idle', 'techno idle', 12);
+				frames = Paths.getSparrowAtlas('Technoblade', 'technoWeek');
+				animation.addByPrefix('idle', 'Ridle', 12);
 		
-				animation.addByPrefix('singUP', 'techno up', 24);
-				animation.addByPrefix('singRIGHT', 'techno right', 24);
-				animation.addByPrefix('singDOWN', 'techno down', 24);
-				animation.addByPrefix('singLEFT', 'techno left', 24);
+				animation.addByPrefix('singUP', 'Rup', 24);
+				animation.addByPrefix('singRIGHT', 'Rright', 24, false);
+				animation.addByPrefix('singDOWN', 'Rdown', 24, false);
+				animation.addByPrefix('singLEFT', 'Rleft', 24, false);
 		
 				addOffset('idle');
 				addOffset("singUP");
@@ -174,8 +154,8 @@ class Character extends FlxSprite
 				addOffset("singLEFT", -12, 0);
 				addOffset("singDOWN");
 			
-				setGraphicSize(Std.int(width * 1.5));
-				updateHitbox();
+				setGraphicSize(Std.int(width * 1));
+				//updateHitbox();
 		
 				playAnim('idle');
 		}
