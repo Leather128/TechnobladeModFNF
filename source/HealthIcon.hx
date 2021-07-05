@@ -13,7 +13,7 @@ class HealthIcon extends FlxSprite
 	{
 		super();
 		
-		loadGraphic(Paths.image('icons/' + 'bf-icons'), true, 150, 150);
+		loadGraphic(Paths.image('icons/' + char + '-icons'), true, 150, 150);
 
 		antialiasing = true;
 
