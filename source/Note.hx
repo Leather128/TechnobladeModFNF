@@ -35,6 +35,8 @@ class Note extends FlxSprite
 	public static var BLUE_NOTE:Int = 1;
 	public static var RED_NOTE:Int = 3;
 
+	public var inCharter:Bool = false;
+
 	public var rating:String = "shit";
 
 	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?inCharter:Bool = false)
@@ -50,6 +52,9 @@ class Note extends FlxSprite
 		x += 50;
 		// MAKE SURE ITS DEFINITELY OFF SCREEN?
 		y -= 2000;
+
+		this.inCharter = inCharter;
+
 		if (inCharter)
 			this.strumTime = strumTime;
 		else 
@@ -198,7 +203,7 @@ class Note extends FlxSprite
 	{
 		super.update(elapsed);
 
-		if (mustPress)
+		if (mustPress && !inCharter)
 		{
 			// ass
 			if (isSustainNote)
