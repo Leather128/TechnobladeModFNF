@@ -1100,34 +1100,18 @@ class ChartingState extends MusicBeatState
 		if (check_mustHitSection.checked)
 		{
 			if(leftIcon.animation.curAnim.name != _song.player1)
-			{
-				leftIcon = new HealthIcon(_song.player1);
-				leftIcon.scrollFactor.set(1, 1);
-				leftIcon.setGraphicSize(0, 45);
-			}
+				leftIcon.resetNew(_song.player1);
 			
 			if(rightIcon.animation.curAnim.name != _song.player2)
-			{
-				rightIcon = new HealthIcon(_song.player2);
-				rightIcon.scrollFactor.set(1, 1);
-				rightIcon.setGraphicSize(0, 45);
-			}
+				rightIcon.resetNew(_song.player2);
 		}
 		else
 		{
 			if(leftIcon.animation.curAnim.name != _song.player2)
-			{
-				leftIcon = new HealthIcon(_song.player2);
-				leftIcon.scrollFactor.set(1, 1);
-				leftIcon.setGraphicSize(0, 45);
-			}
+				leftIcon.resetNew(_song.player2);
 			
 			if(rightIcon.animation.curAnim.name != _song.player1)
-			{
-				rightIcon = new HealthIcon(_song.player1);
-				rightIcon.scrollFactor.set(1, 1);
-				rightIcon.setGraphicSize(0, 45);
-			}
+				rightIcon.resetNew(_song.player1);
 		}
 	}
 

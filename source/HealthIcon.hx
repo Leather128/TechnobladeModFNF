@@ -22,6 +22,17 @@ class HealthIcon extends FlxSprite
 		scrollFactor.set();
 	}
 
+	public function resetNew(char:String = 'bf', isPlayer:Bool = false)
+	{
+		loadGraphic(Paths.image('icons/' + char + '-icons'), true, 150, 150);
+
+		antialiasing = true;
+
+		animation.add(char, [0, 1, 2], 0, false, isPlayer);
+		animation.play(char);
+		scrollFactor.set();
+	}
+
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
