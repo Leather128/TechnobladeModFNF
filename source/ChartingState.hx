@@ -1073,9 +1073,6 @@ class ChartingState extends MusicBeatState
 	{
 		var daSec = FlxMath.maxInt(curSection, sectionNum);
 
-		_song.notes[daSec].bpm = _song.notes[sectionNum].bpm;
-		_song.notes[daSec].changeBPM = _song.notes[sectionNum].changeBPM;
-
 		for (note in _song.notes[daSec - sectionNum].sectionNotes)
 		{
 			var strum = note[0] + Conductor.stepCrochet * (_song.notes[daSec].lengthInSteps * sectionNum);
