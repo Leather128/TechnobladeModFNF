@@ -727,7 +727,11 @@ class ChartingState extends MusicBeatState
 						if(!claps.contains(note))
 						{
 							claps.push(note);
-							FlxG.sound.play(Paths.sound('SNAP'));
+							
+							if(note.mustPress)
+								FlxG.sound.play(Paths.sound('CLAP'));
+							else
+								FlxG.sound.play(Paths.sound('SNAP'));
 						}
 					});
 				}
