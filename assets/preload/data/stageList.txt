@@ -1,5 +1,5 @@
 stage
 lmanburg
-the-forest
+desert
 temple
 temple-crowded
