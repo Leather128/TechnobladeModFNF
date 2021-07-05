@@ -35,6 +35,8 @@ class Note extends FlxSprite
 	public static var BLUE_NOTE:Int = 1;
 	public static var RED_NOTE:Int = 3;
 
+	public var inCharter:Bool = false;
+
 	public var rating:String = "shit";
 
 	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?inCharter:Bool = false)
@@ -50,6 +52,9 @@ class Note extends FlxSprite
 		x += 50;
 		// MAKE SURE ITS DEFINITELY OFF SCREEN?
 		y -= 2000;
+
+		this.inCharter = inCharter;
+
 		if (inCharter)
 			this.strumTime = strumTime;
 		else 
@@ -71,31 +76,6 @@ class Note extends FlxSprite
 
 		switch (noteTypeCheck)
 		{
-			case 'pixel':
-				loadGraphic(Paths.image('weeb/pixelUI/arrows-pixels','week6'), true, 17, 17);
-
-				animation.add('greenScroll', [6]);
-				animation.add('redScroll', [7]);
-				animation.add('blueScroll', [5]);
-				animation.add('purpleScroll', [4]);
-
-				if (isSustainNote)
-				{
-					loadGraphic(Paths.image('weeb/pixelUI/arrowEnds','week6'), true, 7, 6);
-
-					animation.add('purpleholdend', [4]);
-					animation.add('greenholdend', [6]);
-					animation.add('redholdend', [7]);
-					animation.add('blueholdend', [5]);
-
-					animation.add('purplehold', [0]);
-					animation.add('greenhold', [2]);
-					animation.add('redhold', [3]);
-					animation.add('bluehold', [1]);
-				}
-
-				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
-				updateHitbox();
 			default:
 				frames = Paths.getSparrowAtlas('NOTE_assets');
 
@@ -198,7 +178,7 @@ class Note extends FlxSprite
 	{
 		super.update(elapsed);
 
-		if (mustPress)
+		if (mustPress && !inCharter)
 		{
 			// ass
 			if (isSustainNote)
