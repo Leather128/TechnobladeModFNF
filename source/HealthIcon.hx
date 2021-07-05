@@ -13,23 +13,12 @@ class HealthIcon extends FlxSprite
 	{
 		super();
 		
-		loadGraphic(Paths.image('iconGrid'), true, 150, 150);
+		loadGraphic(Paths.image('icons/' + 'bf-icons'), true, 150, 150);
 
 		antialiasing = true;
-		animation.add('bf', [0, 1], 0, false, isPlayer);
-		animation.add('dad', [2, 3], 0, false, isPlayer);
-		animation.add('gf', [4], 0, false, isPlayer);
-		animation.add('technoblade', [5, 6], 0, false, isPlayer);
-		animation.add('technoblade-mad', [7, 8], 0, false, isPlayer);
-		animation.add('technoblade-angry', [9, 10], 0, false, isPlayer);
+
+		animation.add(char, [0, 1, 2], 0, false, isPlayer);
 		animation.play(char);
-
-		switch(char)
-		{
-			case 'bf-pixel' | 'senpai' | 'senpai-angry' | 'spirit' | 'gf-pixel':
-				antialiasing = false;
-		}
-
 		scrollFactor.set();
 	}
 
