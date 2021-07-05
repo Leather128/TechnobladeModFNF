@@ -1,6 +1,6 @@
 Confrontance:gf:1
 Agro-Nerd:dad:1
 The-Potato-Warrior:dad:1
-T-2-1:dad:2
-T-2-2:spooky:2
-T-2-3:spooky:2
+The-Master-Plan:dad:2
+The-Art-of-War:spooky:2
+Sun-Tzu:spooky:2
