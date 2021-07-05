@@ -1,6 +1,6 @@
-Confrontance:gf:1
-Agro-Nerd:dad:1
-The-Potato-Warrior:dad:1
-The-Master-Plan:dad:2
-The-Art-of-War:spooky:2
-Sun-Tzu:spooky:2
+Confrontance:technoblade:1
+Agro-Nerd:technoblade:1
+The-Potato-Warrior:technoblade-angry:1
+The-Master-Plan:technoblade:2
+The-Art-of-War:technoblade:2
+Sun-Tzu:technoblade:2
