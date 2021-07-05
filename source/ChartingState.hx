@@ -728,7 +728,7 @@ class ChartingState extends MusicBeatState
 						{
 							claps.push(note);
 							
-							if(_song.notes[curSection].mustHitSection)
+							if(note.mustPress)
 								FlxG.sound.play(Paths.sound('CLAP'));
 							else
 								FlxG.sound.play(Paths.sound('SNAP'));
@@ -1172,7 +1172,13 @@ class ChartingState extends MusicBeatState
 			var daStrumTime = i[0];
 			var daSus = i[2];
 
+			var isPressThingyIGuess = false;
+
+			if(daNoteInfo <= 4 && _song.notes[curSection].mustHitSection || daNoteInfo > 4 && !_song.notes[curSection].mustHitSection)
+				isPressThingyIGuess = true;
+
 			var note:Note = new Note(daStrumTime, daNoteInfo % 4,null,false,true);
+			note.mustPress = isPressThingyIGuess;
 			note.sustainLength = daSus;
 			note.setGraphicSize(GRID_SIZE, GRID_SIZE);
 			note.updateHitbox();
