@@ -22,8 +22,14 @@ class HealthIcon extends FlxSprite
 		animation.add('technoblade', [5, 6], 0, false, isPlayer);
 		animation.add('technoblade-mad', [7, 8], 0, false, isPlayer);
 		animation.add('technoblade-angry', [9, 10], 0, false, isPlayer);
-
 		animation.play(char);
+
+		switch(char)
+		{
+			case 'bf-pixel' | 'senpai' | 'senpai-angry' | 'spirit' | 'gf-pixel':
+				antialiasing = false;
+		}
+
 		scrollFactor.set();
 	}
 
