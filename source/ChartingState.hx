@@ -728,7 +728,7 @@ class ChartingState extends MusicBeatState
 						{
 							claps.push(note);
 							
-							if(note.mustPress)
+							if(_song.notes[curSection].mustHitSection)
 								FlxG.sound.play(Paths.sound('CLAP'));
 							else
 								FlxG.sound.play(Paths.sound('SNAP'));
