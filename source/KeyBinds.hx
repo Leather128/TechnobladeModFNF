@@ -74,14 +74,6 @@ class KeyBinds
         }
 
         // mine lol
-        if(FlxG.save.data.upBind == null)
-			FlxG.save.data.upBind = "W";
-		if(FlxG.save.data.downBind == null)
-			FlxG.save.data.downBind = "S";
-		if(FlxG.save.data.leftBind == null)
-			FlxG.save.data.leftBind = "A";
-		if(FlxG.save.data.rightBind == null)
-			FlxG.save.data.rightBind = "D";
 		if(FlxG.save.data.killBind == null)
 			FlxG.save.data.killBind = "R";
 
