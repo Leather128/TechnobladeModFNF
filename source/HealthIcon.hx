@@ -30,7 +30,6 @@ class HealthIcon extends FlxSprite
 
 		animation.add(char, [0, 1, 2], 0, false, isPlayer);
 		animation.play(char);
-		scrollFactor.set(1, 1);
 	}
 
 	override function update(elapsed:Float)
