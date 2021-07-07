@@ -1,5 +1,6 @@
 stage
 lmanburg
+lmanburg-fire
 desert
 temple
 temple-crowded
