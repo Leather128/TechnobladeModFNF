@@ -73,6 +73,10 @@ class KeyBinds
             trace("No GRIGHT");
         }
 
+        // mine lol
+		if(FlxG.save.data.killBind == null)
+			FlxG.save.data.killBind = "R";
+
         trace('${FlxG.save.data.leftBind}-${FlxG.save.data.downBind}-${FlxG.save.data.upBind}-${FlxG.save.data.rightBind}');
     }
 
