@@ -1,6 +1,6 @@
-Confrontance:technoblade:1
-Agro-Nerd:technoblade:1
-The-Potato-Warrior:technoblade-angry:1
-The-Master-Plan:technoblade:2
-The-Art-of-War:technoblade:2
-Sun-Tzu:technoblade:2
+Confrontance:technoblade:0
+Agro-Nerd:technoblade:0
+The-Potato-Warrior:technoblade-angry:0
+The-Master-Plan:technoblade:1
+The-Art-of-War:technoblade:1
+Sun-Tzu:technoblade:1
