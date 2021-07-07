@@ -447,17 +447,17 @@ class PlayState extends MusicBeatState
 					bg.updateHitbox();
 					add(bg);
 
-					var lava:FlxSprite = new FlxSprite(-300, -100);
+					var lava:FlxSprite = new FlxSprite(-150, 485);
 					lava.frames = Paths.getSparrowAtlas('lmanburg/lava','technoWeek1');
 					lava.animation.addByPrefix("idle", "lava", 10, true);
-					lava.animation.play("idle", true);
 
 					lava.antialiasing = true;
 					lava.scrollFactor.set(0.3, 0.3);
-					lava.setGraphicSize(Std.int(bg.width * 0.7));
-					lava.active = false;
+					lava.setGraphicSize(Std.int(bg.width * 1.4));
+					lava.active = true;
 					lava.updateHitbox();
 					add(lava);
+					lava.animation.play("idle", true);
 	
 						/*var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront'));
 						stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
