@@ -411,13 +411,50 @@ class PlayState extends MusicBeatState
 				
 					defaultCamZoom = 0.9;
 					curStage = 'lmanburg';
-					var bg:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/lmanburg2','technoWeek1'));
-					bg.antialiasing = true;
-					bg.scrollFactor.set(0.3, 0.3);
-					bg.setGraphicSize(Std.int(bg.width * 0.7));
-					bg.active = false;
-					bg.updateHitbox();
-					add(bg);
+
+					var skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/sky-in-terms-of-atmosphere-sky-and-not-the-fangirl','technoWeek1'));
+					skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu.antialiasing = true;
+					skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu.scrollFactor.set(0, 0);
+					skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu.setGraphicSize(Std.int(skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu.width * 0.7));
+					skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu.active = false;
+					skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu.updateHitbox();
+					add(skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu);
+
+					// I swear to god its not the fangirl now stfu
+					// however, it can be Sky from Paw Patrol, SkyDoesMinecraft, The bluish color of the atmosphere, the atmosphere, and many other variations all referencing "Sky."
+					// before any of y'all @ me that this code is garbage because of long variables, I would kindly tell you to subscribe to technoblade
+
+					var herecomesthesun:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/herecomesdasun','technoWeek1'));
+					herecomesthesun.antialiasing = true;
+					herecomesthesun.scrollFactor.set(0, 0);
+					herecomesthesun.setGraphicSize(Std.int(herecomesthesun.width * 0.7));
+					herecomesthesun.active = false;
+					herecomesthesun.updateHitbox();
+					add(herecomesthesun);
+
+					var wtfisthis:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/whatever-the-heck-this-is-idk-the-dream-smp','technoWeek1'));
+					wtfisthis.antialiasing = true;
+					wtfisthis.scrollFactor.set(0.25, 0.25);
+					wtfisthis.setGraphicSize(Std.int(wtfisthis.width * 0.7));
+					wtfisthis.active = false;
+					wtfisthis.updateHitbox();
+					add(wtfisthis);
+
+					var lmanburgcool:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/coolflagsarecool','technoWeek1'));
+					lmanburgcool.antialiasing = true;
+					lmanburgcool.scrollFactor.set(0.3, 0.3);
+					lmanburgcool.setGraphicSize(Std.int(lmanburgcool.width * 0.7));
+					lmanburgcool.active = false;
+					lmanburgcool.updateHitbox();
+					add(lmanburgcool);
+
+					var stageFront:FlxSprite = new FlxSprite(-150, 600).loadGraphic(Paths.image('lmanburg/platform', 'technoWeek1'));
+					stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
+					stageFront.updateHitbox();
+					stageFront.antialiasing = true;
+					stageFront.scrollFactor.set(0.9, 0.9);
+					stageFront.active = false;
+					add(stageFront);
 
 					/*var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront'));
 					stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
@@ -439,13 +476,33 @@ class PlayState extends MusicBeatState
 			
 					defaultCamZoom = 0.9;
 					curStage = 'lmanburg-fire';
-					var bg:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/lmanburg3','technoWeek1'));
-					bg.antialiasing = true;
-					bg.scrollFactor.set(0.3, 0.3);
-					bg.setGraphicSize(Std.int(bg.width * 0.7));
-					bg.active = false;
-					bg.updateHitbox();
-					add(bg);
+					var doometernalsky:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/shit-sky-became-the-doom-slayer-run-everyone-run','technoWeek1'));
+					doometernalsky.antialiasing = true;
+					doometernalsky.scrollFactor.set(0, 0);
+					doometernalsky.setGraphicSize(Std.int(doometernalsky.width * 0.7));
+					doometernalsky.active = false;
+					doometernalsky.updateHitbox();
+					add(doometernalsky);
+
+					// I swear to god its not the fangirl now stfu
+					// however, it can be Sky from Paw Patrol, SkyDoesMinecraft, The bluish color of the atmosphere, the atmosphere, and many other variations all referencing "Sky."
+					// before any of y'all @ me that this code is garbage because of long variables, I would kindly tell you to subscribe to technoblade
+
+					var wtfisthis:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/whatever-the-heck-this-is-taki-swiss-cheese-edition','technoWeek1'));
+					wtfisthis.antialiasing = true;
+					wtfisthis.scrollFactor.set(0.25, 0.25);
+					wtfisthis.setGraphicSize(Std.int(wtfisthis.width * 0.7));
+					wtfisthis.active = false;
+					wtfisthis.updateHitbox();
+					add(wtfisthis);
+
+					var lmanburgcool:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/coolflagsarefuckingdead','technoWeek1'));
+					lmanburgcool.antialiasing = true;
+					lmanburgcool.scrollFactor.set(0.3, 0.3);
+					lmanburgcool.setGraphicSize(Std.int(lmanburgcool.width * 0.7));
+					lmanburgcool.active = false;
+					lmanburgcool.updateHitbox();
+					add(lmanburgcool);
 
 					var lava:FlxSprite = new FlxSprite(-150, 485);
 					lava.frames = Paths.getSparrowAtlas('lmanburg/lava','technoWeek1');
@@ -453,12 +510,19 @@ class PlayState extends MusicBeatState
 
 					lava.antialiasing = true;
 					lava.scrollFactor.set(0.3, 0.3);
-					lava.setGraphicSize(Std.int(bg.width * 1.4));
+					lava.setGraphicSize(Std.int(lava.width * 1.4));
 					lava.active = true;
 					lava.updateHitbox();
 					add(lava);
 					lava.animation.play("idle", true);
-	
+
+					var stageFront:FlxSprite = new FlxSprite(-150, 600).loadGraphic(Paths.image('lmanburg/platform2', 'technoWeek1'));
+					stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
+					stageFront.updateHitbox();
+					stageFront.antialiasing = true;
+					stageFront.scrollFactor.set(0.9, 0.9);
+					stageFront.active = false;
+					add(stageFront);	
 						/*var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront'));
 						stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
 						stageFront.updateHitbox();
@@ -547,31 +611,17 @@ class PlayState extends MusicBeatState
 					tweenCamIn();
 				}
 
-			case "spooky":
-				dad.y += 200;
-			case "monster":
-				dad.y += 100;
-			case 'monster-christmas':
-				dad.y += 130;
 			case 'dad':
 				camPos.x += 400;
 			case 'pico':
 				camPos.x += 600;
 				dad.y += 300;
-			case 'parents-christmas':
-				dad.x -= 500;
-			case 'senpai':
-				dad.x += 150;
-				dad.y += 360;
-				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
-			case 'senpai-angry':
-				dad.x += 150;
-				dad.y += 360;
-				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
-			case 'spirit':
-				dad.x -= 150;
-				dad.y += 100;
-				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
+			case 'technoblade':
+				camPos.x += 225;
+				dad.y += 225;
+			case 'technoblade-angry':
+				camPos.x += 225;
+				dad.y += 225;
 		}
 
 
