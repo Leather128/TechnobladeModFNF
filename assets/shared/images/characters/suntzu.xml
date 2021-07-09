@@ -1,0 +1,14 @@
+<TextureAtlas xmlns="http://www.w3.org/1999/xhtml" imagepath="suntzu.png">
+<SubTexture name="sdown1" x="0" y="0" width="614" height="1024"/>
+<SubTexture name="sdown2" x="615" y="0" width="614" height="1024"/>
+<SubTexture name="sidle2" x="1230" y="0" width="614" height="1024"/>
+<SubTexture name="sidle3" x="0" y="1025" width="614" height="1024"/>
+<SubTexture name="sidle1" x="615" y="1025" width="614" height="1024"/>
+<SubTexture name="sidle4" x="1230" y="1025" width="614" height="1024"/>
+<SubTexture name="sright1" x="1845" y="0" width="614" height="1024"/>
+<SubTexture name="sright2" x="1845" y="1025" width="614" height="1024"/>
+<SubTexture name="sleft1" x="0" y="2050" width="614" height="1024"/>
+<SubTexture name="sleft2" x="615" y="2050" width="614" height="1024"/>
+<SubTexture name="sup1" x="1230" y="2050" width="614" height="1024"/>
+<SubTexture name="sup2" x="1845" y="2050" width="614" height="1024"/>
+</TextureAtlas>

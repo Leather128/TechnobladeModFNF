@@ -124,7 +124,7 @@ class Character extends FlxSprite
 			
 			case 'technoblade':
 				frames = Paths.getSparrowAtlas('characters/Technoblade', 'shared');
-				animation.addByPrefix('idle', 'Tidle', 12);
+				animation.addByPrefix('idle', 'Tidle', 12, false);
 
 				animation.addByPrefix('singUP', 'Tup', 15, false);
 				animation.addByPrefix('singRIGHT', 'Tright', 15, false);
@@ -137,14 +137,14 @@ class Character extends FlxSprite
 				addOffset("singLEFT", -12, 0);
 				addOffset("singDOWN");
 	
-				setGraphicSize(Std.int(width * 1));
+				setGraphicSize(Std.int(width * 0.6));
 				//updateHitbox();
 
 				playAnim('idle');
 
 			case 'technoblade-angry':
 				frames = Paths.getSparrowAtlas('characters/Technoblade', 'shared');
-				animation.addByPrefix('idle', 'Ridle', 12);
+				animation.addByPrefix('idle', 'Ridle', 12, false);
 		
 				animation.addByPrefix('singUP', 'Rup', 24, false);
 				animation.addByPrefix('singRIGHT', 'Rright', 24, false);
@@ -157,9 +157,28 @@ class Character extends FlxSprite
 				addOffset("singLEFT", -12, 0);
 				addOffset("singDOWN");
 			
-				setGraphicSize(Std.int(width * 1));
+				setGraphicSize(Std.int(width * 0.6));
 				//updateHitbox();
 		
+				playAnim('idle');
+			case 'sun-tzu':
+				frames = Paths.getSparrowAtlas('characters/suntzu', 'shared');
+				animation.addByPrefix('idle', 'sidle', 12, false);
+			
+				animation.addByPrefix('singUP', 'sup', 24, false);
+				animation.addByPrefix('singRIGHT', 'sright', 24, false);
+				animation.addByPrefix('singDOWN', 'sdown', 24, false);
+				animation.addByPrefix('singLEFT', 'sleft', 24, false);
+			
+				addOffset('idle');
+				addOffset("singUP");
+				addOffset("singRIGHT", 0, 0);
+				addOffset("singLEFT", 0, 0);
+				addOffset("singDOWN");
+				
+				setGraphicSize(Std.int(width * 0.8));
+				//updateHitbox();
+			
 				playAnim('idle');
 		}
 

@@ -617,11 +617,16 @@ class PlayState extends MusicBeatState
 				camPos.x += 600;
 				dad.y += 300;
 			case 'technoblade':
-				camPos.x += 225;
-				dad.y += 225;
+				camPos.x -= 350;
+				dad.x -= 350;
+				dad.y += 0;
 			case 'technoblade-angry':
-				camPos.x += 225;
-				dad.y += 225;
+				camPos.x -= 350;
+				dad.x -= 350;
+				dad.y += 0;
+			case 'sun-tzu':
+				camPos.y -= 150;
+				dad.y -= 150;
 		}
 
 
