@@ -484,10 +484,6 @@ class PlayState extends MusicBeatState
 					doometernalsky.updateHitbox();
 					add(doometernalsky);
 
-					// I swear to god its not the fangirl now stfu
-					// however, it can be Sky from Paw Patrol, SkyDoesMinecraft, The bluish color of the atmosphere, the atmosphere, and many other variations all referencing "Sky."
-					// before any of y'all @ me that this code is garbage because of long variables, I would kindly tell you to subscribe to technoblade
-
 					var wtfisthis:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/whatever-the-heck-this-is-taki-swiss-cheese-edition','technoWeek1'));
 					wtfisthis.antialiasing = true;
 					wtfisthis.scrollFactor.set(0.25, 0.25);
@@ -539,6 +535,203 @@ class PlayState extends MusicBeatState
 						stageCurtains.active = false;
 	
 						add(stageCurtains); */
+					case 'desert':
+			
+						defaultCamZoom = 0.9;
+						curStage = 'desert';
+						var skycoveredinsand:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('desert/background','technoWeek2'));
+						skycoveredinsand.antialiasing = true;
+						skycoveredinsand.scrollFactor.set(0, 0);
+						skycoveredinsand.setGraphicSize(Std.int(skycoveredinsand.width * 0.8));
+						skycoveredinsand.active = false;
+						skycoveredinsand.updateHitbox();
+						add(skycoveredinsand);
+
+						var pyramidpog:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('desert/foreground5','technoWeek2'));
+						pyramidpog.antialiasing = true;
+						pyramidpog.scrollFactor.set(0.3, 0.3);
+						pyramidpog.setGraphicSize(Std.int(pyramidpog.width * 0.8));
+						pyramidpog.active = false;
+						pyramidpog.updateHitbox();
+						add(pyramidpog);
+
+						var twentytwoblockcactus:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('desert/foreground4','technoWeek2'));
+						twentytwoblockcactus.antialiasing = true;
+						twentytwoblockcactus.scrollFactor.set(0.4, 0.4);
+						twentytwoblockcactus.setGraphicSize(Std.int(twentytwoblockcactus.width * 0.8));
+						twentytwoblockcactus.active = false;
+						twentytwoblockcactus.updateHitbox();
+						add(twentytwoblockcactus);
+
+						var snad3:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('desert/foreground3','technoWeek2'));
+						snad3.antialiasing = true;
+						snad3.scrollFactor.set(0.7, 0.7);
+						snad3.setGraphicSize(Std.int(snad3.width * 0.8));
+						snad3.active = false;
+						snad3.updateHitbox();
+						add(snad3);
+
+						var snad2:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('desert/foreground2','technoWeek2'));
+						snad2.antialiasing = true;
+						snad2.scrollFactor.set(0.8, 0.8);
+						snad2.setGraphicSize(Std.int(snad2.width * 0.8));
+						snad2.active = false;
+						snad2.updateHitbox();
+						add(snad2);
+
+						var snad1:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('desert/foreground1','technoWeek2'));
+						snad1.antialiasing = true;
+						snad1.scrollFactor.set(0.9, 0.9);
+						snad1.setGraphicSize(Std.int(snad1.width * 0.8));
+						snad1.active = false;
+						snad1.updateHitbox();
+						add(snad1);
+					case 'temple':
+			
+						defaultCamZoom = 0.9;
+						curStage = 'temple';
+						var stone:FlxSprite = new FlxSprite(-300, 0).loadGraphic(Paths.image('desert/stonebrickbg','technoWeek2'));
+						stone.antialiasing = true;
+						stone.scrollFactor.set(0.5, 0.5);
+						stone.setGraphicSize(Std.int(stone.width * 0.8));
+						stone.active = false;
+						stone.updateHitbox();
+						add(stone);
+
+						var platform:FlxSprite = new FlxSprite(-300, 0).loadGraphic(Paths.image('desert/sandstoneplatform','technoWeek2'));
+						platform.antialiasing = true;
+						platform.scrollFactor.set(0.9, 0.9);
+						platform.setGraphicSize(Std.int(platform.width * 0.8));
+						platform.active = false;
+						platform.updateHitbox();
+						add(platform);
+						
+						var chaira:FlxSprite = new FlxSprite(-300, 0).loadGraphic(Paths.image('desert/chairrightside','technoWeek2'));
+						chaira.antialiasing = true;
+						chaira.scrollFactor.set(0.9, 0.9);
+						chaira.setGraphicSize(Std.int(chaira.width * 0.8));
+						chaira.active = false;
+						chaira.updateHitbox();
+						add(chaira);
+						
+						var chairb:FlxSprite = new FlxSprite(-300, 0).loadGraphic(Paths.image('desert/chairmidsection','technoWeek2'));
+						chairb.antialiasing = true;
+						chairb.scrollFactor.set(0.9, 0.9);
+						chairb.setGraphicSize(Std.int(chairb.width * 0.8));
+						chairb.active = false;
+						chairb.updateHitbox();
+						add(chairb);
+
+						var chairc:FlxSprite = new FlxSprite(-300, 0).loadGraphic(Paths.image('desert/chairbacksection','technoWeek2'));
+						chairc.antialiasing = true;
+						chairc.scrollFactor.set(0.9, 0.9);
+						chairc.setGraphicSize(Std.int(chairc.width * 0.8));
+						chairc.active = false;
+						chairc.updateHitbox();
+						add(chairc);
+
+						var suntzu:FlxSprite = new FlxSprite(-300, 0).loadGraphic(Paths.image('desert/suntzu','technoWeek2'));
+						suntzu.antialiasing = true;
+						suntzu.scrollFactor.set(0.9, 0.9);
+						suntzu.setGraphicSize(Std.int(suntzu.width * 0.8));
+						suntzu.active = false;
+						suntzu.updateHitbox();
+						add(suntzu);
+
+						var chaird:FlxSprite = new FlxSprite(-300, 0).loadGraphic(Paths.image('desert/chairleftside','technoWeek2'));
+						chaird.antialiasing = true;
+						chaird.scrollFactor.set(0.9, 0.9);
+						chaird.setGraphicSize(Std.int(chaird.width * 0.8));
+						chaird.active = false;
+						chaird.updateHitbox();
+						add(chaird);
+
+						var thefridaynightfunkin:FlxSprite = new FlxSprite(-300, 0).loadGraphic(Paths.image('desert/ppl','technoWeek2'));
+						thefridaynightfunkin.antialiasing = true;
+						thefridaynightfunkin.scrollFactor.set(1, 1);
+						thefridaynightfunkin.setGraphicSize(Std.int(thefridaynightfunkin.width * 0.8));
+						thefridaynightfunkin.active = false;
+						thefridaynightfunkin.updateHitbox();
+						add(thefridaynightfunkin);
+		
+					case 'temple-crowded':
+			
+						defaultCamZoom = 0.9;
+						curStage = 'temple-crowded';
+
+						var failsave:FlxSprite = new FlxSprite(-300, -500).loadGraphic(Paths.image('desert/fsbg','technoWeek2'));
+						failsave.antialiasing = true;
+						failsave.scrollFactor.set(0.5, 0.5);
+						failsave.setGraphicSize(Std.int(failsave.width * 2));
+						failsave.active = false;
+						failsave.updateHitbox();
+						add(failsave);
+
+						var stone:FlxSprite = new FlxSprite(-300, 0).loadGraphic(Paths.image('desert/stonebrickbg','technoWeek2'));
+						stone.antialiasing = true;
+						stone.scrollFactor.set(0.5, 0.5);
+						stone.setGraphicSize(Std.int(stone.width * 0.8));
+						stone.active = false;
+						stone.updateHitbox();
+						add(stone);
+
+						var platform:FlxSprite = new FlxSprite(-300, 0).loadGraphic(Paths.image('desert/sandstoneplatform','technoWeek2'));
+						platform.antialiasing = true;
+						platform.scrollFactor.set(0.9, 0.9);
+						platform.setGraphicSize(Std.int(platform.width * 0.8));
+						platform.active = false;
+						platform.updateHitbox();
+						add(platform);
+						
+						var chaira:FlxSprite = new FlxSprite(-300, 0).loadGraphic(Paths.image('desert/chairrightside','technoWeek2'));
+						chaira.antialiasing = true;
+						chaira.scrollFactor.set(0.9, 0.9);
+						chaira.setGraphicSize(Std.int(chaira.width * 0.8));
+						chaira.active = false;
+						chaira.updateHitbox();
+						add(chaira);
+						
+						var chairb:FlxSprite = new FlxSprite(-300, 0).loadGraphic(Paths.image('desert/chairmidsection','technoWeek2'));
+						chairb.antialiasing = true;
+						chairb.scrollFactor.set(0.9, 0.9);
+						chairb.setGraphicSize(Std.int(chairb.width * 0.8));
+						chairb.active = false;
+						chairb.updateHitbox();
+						add(chairb);
+
+						var chairc:FlxSprite = new FlxSprite(-300, 0).loadGraphic(Paths.image('desert/chairbacksection','technoWeek2'));
+						chairc.antialiasing = true;
+						chairc.scrollFactor.set(0.9, 0.9);
+						chairc.setGraphicSize(Std.int(chairc.width * 0.8));
+						chairc.active = false;
+						chairc.updateHitbox();
+						add(chairc);
+
+						/*var suntzu:FlxSprite = new FlxSprite(-300, 0).loadGraphic(Paths.image('desert/suntzu','technoWeek2'));
+						suntzu.antialiasing = true;
+						suntzu.scrollFactor.set(0.9, 0.9);
+						suntzu.setGraphicSize(Std.int(suntzu.width * 0.8));
+						suntzu.active = false;
+						suntzu.updateHitbox();
+						add(suntzu);*/
+
+						var chaird:FlxSprite = new FlxSprite(-300, 0).loadGraphic(Paths.image('desert/chairleftside','technoWeek2'));
+						chaird.antialiasing = true;
+						chaird.scrollFactor.set(0.9, 0.9);
+						chaird.setGraphicSize(Std.int(chaird.width * 0.8));
+						chaird.active = false;
+						chaird.updateHitbox();
+						add(chaird);
+
+						var thefridaynightfunkin:FlxSprite = new FlxSprite(-300, 0).loadGraphic(Paths.image('desert/ppl','technoWeek2'));
+						thefridaynightfunkin.antialiasing = true;
+						thefridaynightfunkin.scrollFactor.set(1, 1);
+						thefridaynightfunkin.setGraphicSize(Std.int(thefridaynightfunkin.width * 0.8));
+						thefridaynightfunkin.active = false;
+						thefridaynightfunkin.updateHitbox();
+						add(thefridaynightfunkin);
+
+	
 			default:
 			{
 					defaultCamZoom = 0.9;
