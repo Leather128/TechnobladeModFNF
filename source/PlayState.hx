@@ -1221,7 +1221,7 @@ class PlayState extends MusicBeatState
 
 		#if windows
 		// pre lowercasing the song name (startCountdown)
-		var songLowercase = PlayState.SONG.songtoLowerCase();
+		var songLowercase = PlayState.SONG.song.toLowerCase();
 		if (executeModchart)
 		{
 			luaModchart = ModchartState.createModchartState();
