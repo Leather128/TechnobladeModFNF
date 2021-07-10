@@ -38,8 +38,8 @@ class StoryMenuState extends MusicBeatState
 	];
 
 	var weekNames:Array<String> = [
-		"Trespassing",
-		"Learning the ways."
+		"Doomsday at Lman'burg",
+		"Ancient China"
 	];
 
 	var txtWeekTitle:FlxText;
