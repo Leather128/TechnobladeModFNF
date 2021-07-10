@@ -45,7 +45,10 @@ class FreeplayState extends MusicBeatState
 		for (i in 0...initSonglist.length)
 		{
 			var data:Array<String> = initSonglist[i].split(':');
-			songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
+
+
+			if(data[3] == null || (Highscore.getWeekScore(0, 2) > 0 && Highscore.getWeekScore(1, 2) > 0))
+				songs.push(new SongMetadata(data[0], Std.parseInt(data[2]), data[1]));
 		}
 
 		/* 

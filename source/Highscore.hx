@@ -70,7 +70,9 @@ class Highscore
 			}
 			else
 				setScore(daWeek, score);
-		}else trace('BotPlay detected. Score saving is disabled.');
+		}
+		else
+			trace('BotPlay detected. Score saving is disabled.');
 	}
 
 	/**

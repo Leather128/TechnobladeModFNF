@@ -93,7 +93,7 @@ class TitleState extends MusicBeatState
 		trace('NEWGROUNDS LOL');
 		#end
 
-		FlxG.save.bind('funkin', 'ninjamuffin99');
+		FlxG.save.bind('technomod', 'leather128andronezkj15');
 
 		KadeEngineData.initSave();
 
@@ -328,7 +328,8 @@ class TitleState extends MusicBeatState
 						trace('outdated lmao! ' + returnedData[0] + ' != ' + MainMenuState.kadeEngineVer);
 						OutdatedSubState.needVer = returnedData[0];
 						OutdatedSubState.currChanges = returnedData[1];
-						FlxG.switchState(new OutdatedSubState());
+						trace("LLMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO it said outdated when i switched kadeenginever to 2.0 lol");
+						FlxG.switchState(new MainMenuState());
 					}
 					else
 					{

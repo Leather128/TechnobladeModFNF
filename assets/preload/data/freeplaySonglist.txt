@@ -3,4 +3,5 @@ Agro-Nerd:technoblade:0
 The-Potato-Warrior:technoblade-angry:0
 The-Master-Plan:technoblade:1
 The-Art-of-War:technoblade:1
-Sun-Tzu:technoblade:1
+Sun-Tzu:sun-tzu:1
+Technomania:technoblade:0:story mode unlock lol
