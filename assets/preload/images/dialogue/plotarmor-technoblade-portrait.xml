@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="plotarmor-technoblade.png">
+<TextureAtlas imagePath="plotarmor-technoblade-portrait.png">
 	<SubTexture name="portrait0000" x="0" y="0" width="996" height="580"/>
 	<SubTexture name="portrait0001" x="1036" y="0" width="996" height="580"/>
 	<SubTexture name="portrait0002" x="1036" y="0" width="996" height="580"/>
