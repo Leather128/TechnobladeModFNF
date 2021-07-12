@@ -1127,6 +1127,7 @@ class PlayState extends MusicBeatState
 
 	function lmanburgCutscene(?dialogueBox:DialogueBox):Void
 	{
+		inCutscene = true;
 		dad.visible = false;
 
 		var technoCutscene = new FlxSprite(dad.x, dad.y);
@@ -1150,9 +1151,10 @@ class PlayState extends MusicBeatState
 					var flintandsteel = new FlxSprite(dad.x, dad.y);
 					flintandsteel.frames = Paths.getSparrowAtlas("flintandsteel", "technoWeek1");
 					flintandsteel.animation.addByPrefix("flying", "fs", 12);
+					flintandsteel.setGraphicSize(Std.int(flintandsteel.width * 0.3));
 					flintandsteel.animation.play("flying");
-					flintandsteel.velocity.x = 30;
-					flintandsteel.velocity.y = 50;
+					flintandsteel.velocity.x = 1400;
+					flintandsteel.velocity.y = -100;
 					add(flintandsteel);
 
 					FlxG.sound.play(Paths.sound('flint-and-steel', 'technoWeek1'));
