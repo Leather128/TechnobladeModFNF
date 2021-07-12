@@ -238,5 +238,10 @@ class DialogueBox extends FlxSpriteGroup
 			else
 				PlayState.boyfriend.animation.play(splitName[4], true);
 		}
+		else
+		{
+			PlayState.dad.animation.play("idle", true);
+			PlayState.boyfriend.animation.play("idle", true);
+		}
 	}
 }
