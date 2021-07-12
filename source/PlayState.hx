@@ -1,5 +1,6 @@
 package;
 
+import flixel.input.FlxAccelerometer;
 import openfl.ui.KeyLocation;
 import openfl.events.Event;
 import haxe.EnumTools;
@@ -228,6 +229,20 @@ class PlayState extends MusicBeatState
 
 	private var executeModchart = false;
 
+	// lmanburg
+	var skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu:FlxSprite;
+	var herecomesthesun:FlxSprite;
+	var wtfisthis:FlxSprite;
+	var lmanburgcool:FlxSprite;
+	var stageFront:FlxSprite;
+
+	// fireburg
+	var firestageFront:FlxSprite;
+	var wtfisfire:FlxSprite;
+	var lava:FlxSprite;
+	var firelmanburgdead:FlxSprite;
+	var doometernalsky:FlxSprite;
+
 	// API stuff
 	
 	public function addObject(object:FlxBasic) { add(object); }
@@ -407,84 +422,31 @@ class PlayState extends MusicBeatState
 					stageCurtains.active = false;
 
 					add(stageCurtains);
-			case 'lmanburg':
-				
-					defaultCamZoom = 0.9;
-					curStage = 'lmanburg';
-
-					var skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/sky-in-terms-of-atmosphere-sky-and-not-the-fangirl','technoWeek1'));
-					skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu.antialiasing = true;
-					skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu.scrollFactor.set(0, 0);
-					skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu.setGraphicSize(Std.int(skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu.width * 0.7));
-					skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu.active = false;
-					skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu.updateHitbox();
-					add(skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu);
-
-					// I swear to god its not the fangirl now stfu
-					// however, it can be Sky from Paw Patrol, SkyDoesMinecraft, The bluish color of the atmosphere, the atmosphere, and many other variations all referencing "Sky."
-					// before any of y'all @ me that this code is garbage because of long variables, I would kindly tell you to subscribe to technoblade
-
-					var herecomesthesun:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/herecomesdasun','technoWeek1'));
-					herecomesthesun.antialiasing = true;
-					herecomesthesun.scrollFactor.set(0, 0);
-					herecomesthesun.setGraphicSize(Std.int(herecomesthesun.width * 0.7));
-					herecomesthesun.active = false;
-					herecomesthesun.updateHitbox();
-					add(herecomesthesun);
-
-					var wtfisthis:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/whatever-the-heck-this-is-idk-the-dream-smp','technoWeek1'));
-					wtfisthis.antialiasing = true;
-					wtfisthis.scrollFactor.set(0.25, 0.25);
-					wtfisthis.setGraphicSize(Std.int(wtfisthis.width * 0.7));
-					wtfisthis.active = false;
-					wtfisthis.updateHitbox();
-					add(wtfisthis);
-
-					var lmanburgcool:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/coolflagsarecool','technoWeek1'));
-					lmanburgcool.antialiasing = true;
-					lmanburgcool.scrollFactor.set(0.3, 0.3);
-					lmanburgcool.setGraphicSize(Std.int(lmanburgcool.width * 0.7));
-					lmanburgcool.active = false;
-					lmanburgcool.updateHitbox();
-					add(lmanburgcool);
-
-					var stageFront:FlxSprite = new FlxSprite(-150, 600).loadGraphic(Paths.image('lmanburg/platform', 'technoWeek1'));
-					stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
-					stageFront.updateHitbox();
-					stageFront.antialiasing = true;
-					stageFront.scrollFactor.set(0.9, 0.9);
-					stageFront.active = false;
-					add(stageFront);
-
-					/*var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront'));
-					stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
-					stageFront.updateHitbox();
-					stageFront.antialiasing = true;
-					stageFront.scrollFactor.set(0.9, 0.9);
-					stageFront.active = false;
-					add(stageFront);
-
-					var stageCurtains:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('stagecurtains'));
-					stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
-					stageCurtains.updateHitbox();
-					stageCurtains.antialiasing = true;
-					stageCurtains.scrollFactor.set(1.3, 1.3);
-					stageCurtains.active = false;
-
-					add(stageCurtains); */
-			case 'lmanburg-fire':
-		
+			case 'lmanburg' | 'lmanburg-fire':
 				defaultCamZoom = 0.9;
-				curStage = 'lmanburg-fire';
-				var doometernalsky:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/shit-sky-became-the-doom-slayer-run-everyone-run','technoWeek1'));
-				doometernalsky.antialiasing = true;
-				doometernalsky.scrollFactor.set(0, 0);
-				doometernalsky.setGraphicSize(Std.int(doometernalsky.width * 0.7));
-				doometernalsky.active = false;
-				doometernalsky.updateHitbox();
-				add(doometernalsky);
+				curStage = 'lmanburg';
 
-				var wtfisthis:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/whatever-the-heck-this-is-taki-swiss-cheese-edition','technoWeek1'));
+				skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/sky-in-terms-of-atmosphere-sky-and-not-the-fangirl','technoWeek1'));
+				skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu.antialiasing = true;
+				skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu.scrollFactor.set(0, 0);
+				skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu.setGraphicSize(Std.int(skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu.width * 0.7));
+				skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu.active = false;
+				skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu.updateHitbox();
+				add(skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu);
+
+				// I swear to god its not the fangirl now stfu
+				// however, it can be Sky from Paw Patrol, SkyDoesMinecraft, The bluish color of the atmosphere, the atmosphere, and many other variations all referencing "Sky."
+				// before any of y'all @ me that this code is garbage because of long variables, I would kindly tell you to subscribe to technoblade
+
+				herecomesthesun = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/herecomesdasun','technoWeek1'));
+				herecomesthesun.antialiasing = true;
+				herecomesthesun.scrollFactor.set(0, 0);
+				herecomesthesun.setGraphicSize(Std.int(herecomesthesun.width * 0.7));
+				herecomesthesun.active = false;
+				herecomesthesun.updateHitbox();
+				add(herecomesthesun);
+
+				wtfisthis = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/whatever-the-heck-this-is-idk-the-dream-smp','technoWeek1'));
 				wtfisthis.antialiasing = true;
 				wtfisthis.scrollFactor.set(0.25, 0.25);
 				wtfisthis.setGraphicSize(Std.int(wtfisthis.width * 0.7));
@@ -492,7 +454,7 @@ class PlayState extends MusicBeatState
 				wtfisthis.updateHitbox();
 				add(wtfisthis);
 
-				var lmanburgcool:FlxSprite = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/coolflagsarefuckingdead','technoWeek1'));
+				lmanburgcool = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/coolflagsarecool','technoWeek1'));
 				lmanburgcool.antialiasing = true;
 				lmanburgcool.scrollFactor.set(0.3, 0.3);
 				lmanburgcool.setGraphicSize(Std.int(lmanburgcool.width * 0.7));
@@ -500,41 +462,68 @@ class PlayState extends MusicBeatState
 				lmanburgcool.updateHitbox();
 				add(lmanburgcool);
 
-				var lava:FlxSprite = new FlxSprite(-150, 485);
-				lava.frames = Paths.getSparrowAtlas('lmanburg/lava','technoWeek1');
-				lava.animation.addByPrefix("idle", "lava", 10, true);
-
-				lava.antialiasing = true;
-				lava.scrollFactor.set(0.3, 0.3);
-				lava.setGraphicSize(Std.int(lava.width * 1.4));
-				lava.active = true;
-				lava.updateHitbox();
-				add(lava);
-				lava.animation.play("idle", true);
-
-				var stageFront:FlxSprite = new FlxSprite(-150, 600).loadGraphic(Paths.image('lmanburg/platform2', 'technoWeek1'));
+				stageFront = new FlxSprite(-150, 600).loadGraphic(Paths.image('lmanburg/platform', 'technoWeek1'));
 				stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
 				stageFront.updateHitbox();
 				stageFront.antialiasing = true;
 				stageFront.scrollFactor.set(0.9, 0.9);
 				stageFront.active = false;
-				add(stageFront);	
-					/*var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront'));
-					stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
-					stageFront.updateHitbox();
-					stageFront.antialiasing = true;
-					stageFront.scrollFactor.set(0.9, 0.9);
-					stageFront.active = false;
-					add(stageFront);
+				add(stageFront);
 
-					var stageCurtains:FlxSprite = new FlxSprite(-500, -300).loadGraphic(Paths.image('stagecurtains'));
-					stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.9));
-					stageCurtains.updateHitbox();
-					stageCurtains.antialiasing = true;
-					stageCurtains.scrollFactor.set(1.3, 1.3);
-					stageCurtains.active = false;
+				if(stageCheck == 'lmanburg-fire')
+				{
+					defaultCamZoom = 0.9;
+					curStage = 'lmanburg-fire';
 
-					add(stageCurtains); */
+					doometernalsky = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/shit-sky-became-the-doom-slayer-run-everyone-run','technoWeek1'));
+					doometernalsky.antialiasing = true;
+					doometernalsky.scrollFactor.set(0, 0);
+					doometernalsky.setGraphicSize(Std.int(doometernalsky.width * 0.7));
+					doometernalsky.active = false;
+					doometernalsky.updateHitbox();
+					add(doometernalsky);
+					doometernalsky.visible = false;
+
+					wtfisfire = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/whatever-the-heck-this-is-taki-swiss-cheese-edition','technoWeek1'));
+					wtfisfire.antialiasing = true;
+					wtfisfire.scrollFactor.set(0.25, 0.25);
+					wtfisfire.setGraphicSize(Std.int(wtfisfire.width * 0.7));
+					wtfisfire.active = false;
+					wtfisfire.updateHitbox();
+					add(wtfisfire);
+					wtfisfire.visible = false;
+
+					firelmanburgdead = new FlxSprite(-300, -100).loadGraphic(Paths.image('lmanburg/coolflagsarefuckingdead','technoWeek1'));
+					firelmanburgdead.antialiasing = true;
+					firelmanburgdead.scrollFactor.set(0.3, 0.3);
+					firelmanburgdead.setGraphicSize(Std.int(firelmanburgdead.width * 0.7));
+					firelmanburgdead.active = false;
+					firelmanburgdead.updateHitbox();
+					add(firelmanburgdead);
+					firelmanburgdead.visible = false;
+
+					lava = new FlxSprite(-150, 485);
+					lava.frames = Paths.getSparrowAtlas('lmanburg/lava','technoWeek1');
+					lava.animation.addByPrefix("idle", "lava", 10, true);
+
+					lava.antialiasing = true;
+					lava.scrollFactor.set(0.3, 0.3);
+					lava.setGraphicSize(Std.int(lava.width * 1.4));
+					lava.active = true;
+					lava.updateHitbox();
+					add(lava);
+					lava.animation.play("idle", true);
+					lava.visible = false;
+
+					firestageFront = new FlxSprite(-150, 600).loadGraphic(Paths.image('lmanburg/platform2', 'technoWeek1'));
+					firestageFront.setGraphicSize(Std.int(firestageFront.width * 1.1));
+					firestageFront.updateHitbox();
+					firestageFront.antialiasing = true;
+					firestageFront.scrollFactor.set(0.9, 0.9);
+					firestageFront.active = false;
+					add(firestageFront);
+					firestageFront.visible = false;
+				}
 			case 'desert':
 	
 				defaultCamZoom = 0.9;
@@ -1097,6 +1086,10 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'thorns':
 					schoolIntro(doof);
+				case 'confrontance' | 'agro-nerd':
+					technobladeDialogue(doof);
+				case 'the-potato-warrior':
+					lmanburgCutscene(doof);
 				default:
 					startCountdown();
 			}
@@ -1105,6 +1098,20 @@ class PlayState extends MusicBeatState
 		{
 			switch (curSong.toLowerCase())
 			{
+				case 'the-potato-warrior':
+					remove(skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu);
+					remove(herecomesthesun);
+					remove(wtfisthis);
+					remove(lmanburgcool);
+					remove(stageFront);
+
+					doometernalsky.visible = true;
+					firelmanburgdead.visible = true;
+					lava.visible = true;
+					wtfisfire.visible = true;
+					firestageFront.visible = true;
+
+					startCountdown();
 				default:
 					startCountdown();
 			}
@@ -1116,6 +1123,93 @@ class PlayState extends MusicBeatState
 		FlxG.stage.addEventListener(KeyboardEvent.KEY_DOWN,handleInput);
 
 		super.create();
+	}
+
+	function lmanburgCutscene(?dialogueBox:DialogueBox):Void
+	{
+		dad.visible = false;
+
+		var technoCutscene = new FlxSprite(dad.x, dad.y);
+		technoCutscene.frames = Paths.getSparrowAtlas("characters/technocutscene", "shared");
+
+		technoCutscene.setGraphicSize(Std.int(technoCutscene.width * 0.6));
+
+		technoCutscene.animation.addByPrefix("part1", "tfs0", 12, false);
+		technoCutscene.animation.addByPrefix("part2", "tfsl", 12, false);
+		technoCutscene.animation.addByPrefix("part3", "yeetfs", 12, false);
+		technoCutscene.animation.addByPrefix("part4", "yeetmic", 12, false);
+		technoCutscene.animation.addByPrefix("part5", "crossbow", 12, false);
+
+		technoCutscene.animation.finishCallback = function(Animation_Name:String)
+		{
+			switch(Animation_Name)
+			{
+				case 'part1':
+					technoCutscene.animation.play("part2", true);
+				case 'part2':
+					FlxG.sound.play(Paths.sound('flint-and-steel', 'technoWeek1'));
+					technoCutscene.animation.play("part3", true);
+				case 'part3':
+					new FlxTimer().start(2, function(tmr:FlxTimer){
+						var blackShit:FlxSprite = new FlxSprite(0,0).makeGraphic(FlxG.width, FlxG.height, FlxColor.WHITE);
+						blackShit.scrollFactor.set(0, 0);
+						blackShit.alpha = 0;
+						blackShit.cameras = [camHUD];
+						add(blackShit);
+
+						FlxTween.tween(blackShit, {alpha: 1}, 0.5, {
+							onComplete: function(t:FlxTween){
+								remove(skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu);
+								remove(herecomesthesun);
+								remove(wtfisthis);
+								remove(lmanburgcool);
+								remove(stageFront);
+
+								doometernalsky.visible = true;
+								firelmanburgdead.visible = true;
+								lava.visible = true;
+								wtfisfire.visible = true;
+								firestageFront.visible = true;
+							}
+						});
+
+						var explosion = FlxG.sound.play(Paths.sound('cutscene-explosion', 'technoWeek1'));
+
+						explosion.onComplete = function() {
+							FlxTween.tween(blackShit, {alpha: 0}, 1.5, {
+								onComplete: function(tween:FlxTween){
+									FlxG.sound.play(Paths.sound('crossbow-load', 'technoWeek1'));
+									technoCutscene.animation.play("part4", true);
+								}
+							});
+						}
+					});
+				case 'part4':
+					technoCutscene.animation.play("part5", true);
+				case 'part5':
+					remove(technoCutscene);
+					dad.visible = true;
+
+					// at the end of the animation run the normal dialogue cutscene
+					startCountdown();
+					//technobladeDialogue(dialogueBox);
+			}
+		}
+
+		technoCutscene.animation.play("part1", true);
+		add(technoCutscene);
+	}
+
+	function technobladeDialogue(?dialogueBox:DialogueBox):Void
+	{
+		if(dialogueBox != null)
+		{
+			inCutscene = true;
+
+			add(dialogueBox);
+		}
+		else
+			startCountdown();
 	}
 
 	function schoolIntro(?dialogueBox:DialogueBox):Void
@@ -2776,7 +2870,6 @@ class PlayState extends MusicBeatState
 					FlxTransitionableState.skipNextTransIn = true;
 					FlxTransitionableState.skipNextTransOut = true;
 					prevCamFollow = camFollow;
-
 
 					PlayState.SONG = Song.loadFromJson(poop, PlayState.storyPlaylist[0]);
 					FlxG.sound.music.stop();
