@@ -193,7 +193,7 @@ class DialogueBox extends FlxSpriteGroup
 
 				if (!portraitLeft.visible)
 					portraitLeft.visible = true;
-				
+
 				box.flipX = false;
 			case 'bf':
 				portraitLeft.visible = false;
@@ -230,5 +230,13 @@ class DialogueBox extends FlxSpriteGroup
 		curSide = splitName[1];
 		curCharacter = splitName[3];
 		dialogueList[0] = splitName[2].trim();
+
+		if(splitName[4] != null)
+		{
+			if(curSide == "dad")
+				PlayState.dad.animation.play(splitName[4], true);
+			else
+				PlayState.boyfriend.animation.play(splitName[4], true);
+		}
 	}
 }
