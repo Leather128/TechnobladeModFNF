@@ -1,7 +1,7 @@
 :dad:FREEZE, NERD!:crossbow-technoblade
 :dad:I'VE HAD ENOUGH OF THIS! TIME FOR YOU TO DIE!!:crossbow-technoblade
-:bf:Beep!?:bf
-:dad:WHAT IS THIS!? WHY IS MY CROSSBOW JAMMED!?:crossbow-technoblade:confusedDialogue
+:bf:Beep!?:bf:shaken
+:dad:WHAT IS THIS!? WHY IS MY CROSSBOW JAMMED!?:confused-crossbow-technoblade
 :bf:bap?:bf
 :dad:HOW MUCH PLOT ARMOR DO YOU HAVE!:crossbow-technoblade
 :bf:boop bap.:bf
