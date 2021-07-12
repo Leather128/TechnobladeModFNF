@@ -1147,6 +1147,14 @@ class PlayState extends MusicBeatState
 				case 'part1':
 					technoCutscene.animation.play("part2", true);
 				case 'part2':
+					var flintandsteel = new FlxSprite(dad.x, dad.y);
+					flintandsteel.frames = Paths.getSparrowAtlas("flintandsteel", "technoWeek1");
+					flintandsteel.animation.addByPrefix("flying", "fs", 12);
+					flintandsteel.animation.play("flying");
+					flintandsteel.velocity.x = 30;
+					flintandsteel.velocity.y = 50;
+					add(flintandsteel);
+
 					FlxG.sound.play(Paths.sound('flint-and-steel', 'technoWeek1'));
 					technoCutscene.animation.play("part3", true);
 				case 'part3':
@@ -1202,6 +1210,7 @@ class PlayState extends MusicBeatState
 
 	function technobladeDialogue(?dialogueBox:DialogueBox):Void
 	{
+		/*
 		if(dialogueBox != null)
 		{
 			inCutscene = true;
@@ -1209,6 +1218,7 @@ class PlayState extends MusicBeatState
 			add(dialogueBox);
 		}
 		else
+		*/
 			startCountdown();
 	}
 
