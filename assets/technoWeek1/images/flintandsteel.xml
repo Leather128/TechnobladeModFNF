@@ -1,0 +1,4 @@
+<textureatlas xmlns="http://www.w3.org/1999/xhtml" imagepath="flintandsteel.png">
+<SubTexture name="fs2" x="0" y="0" width="656" height="1025"/>
+<subtexture name="fs1" x="657" y="0" width="656" height="1025"/>
+</textureatlas>
