@@ -260,7 +260,8 @@ class TitleState extends MusicBeatState
 
 		for (i in firstArray)
 		{
-			swagGoodArray.push(i.split('--'));
+			if(!i.startsWith("hey modders"))
+				swagGoodArray.push(i.split('--'));
 		}
 
 		return swagGoodArray;
