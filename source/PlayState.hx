@@ -1984,7 +1984,7 @@ class PlayState extends MusicBeatState
 
 		var lengthInPx = scoreTxt.textField.length * scoreTxt.frameHeight; // bad way but does more or less a better job
 
-		scoreTxt.x = (originalX - (lengthInPx / 2)) + 335;
+		scoreTxt.screenCenter(X);
 
 		if (controls.PAUSE && startedCountdown && canPause)
 		{
