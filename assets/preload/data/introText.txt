@@ -11,8 +11,8 @@ tree--moment
 bob--is dream
 dream--is bob
 thanks--for playing
-if you playing this on y nine--stop doing that
-if you playing on play games--stop doing that
+if you playing this on--y nine stop doing that
+if you playing on--play games stop doing that
 eight hundred--subs
 nice--moment
 ugh--is easy
