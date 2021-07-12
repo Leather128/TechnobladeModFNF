@@ -150,6 +150,8 @@ class Character extends FlxSprite
 				animation.addByPrefix('singRIGHT', 'Rright', 24, false);
 				animation.addByPrefix('singDOWN', 'Rdown', 24, false);
 				animation.addByPrefix('singLEFT', 'Rleft', 24, false);
+
+				animation.addByPrefix('confusedDialogue', 'Rdown', 10, true);
 		
 				addOffset('idle');
 				addOffset("singUP");
