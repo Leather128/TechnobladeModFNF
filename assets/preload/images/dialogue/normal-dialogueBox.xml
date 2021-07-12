@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="normal-dialogueBox.png">
+	<SubTexture name="spawn10000" x="0" y="0" width="996" height="580"/>
+	<SubTexture name="spawn10001" x="0" y="0" width="996" height="580"/>
+	<SubTexture name="spawn10002" x="1036" y="0" width="996" height="580"/>
+	<SubTexture name="spawn10003" x="1036" y="0" width="996" height="580"/>
+	<SubTexture name="spawn10004" x="0" y="620" width="996" height="580"/>
+	<SubTexture name="spawn10005" x="0" y="620" width="996" height="580"/>
+	<SubTexture name="spawn10006" x="1036" y="620" width="996" height="580"/>
+	<SubTexture name="spawn10007" x="1036" y="620" width="996" height="580"/>
+	<SubTexture name="spawn10008" x="0" y="1240" width="996" height="580"/>
+	<SubTexture name="spawn10009" x="0" y="1240" width="996" height="580"/>
+	<SubTexture name="spawn10010" x="1036" y="1240" width="996" height="580"/>
+	<SubTexture name="spawn10011" x="1036" y="1240" width="996" height="580"/>
+</TextureAtlas>

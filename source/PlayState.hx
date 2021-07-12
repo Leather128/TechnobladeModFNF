@@ -1199,10 +1199,8 @@ class PlayState extends MusicBeatState
 				case 'part5':
 					remove(technoCutscene);
 					dad.visible = true;
-
-					// at the end of the animation run the normal dialogue cutscene
-					startCountdown();
-					//technobladeDialogue(dialogueBox);
+					
+					technobladeDialogue(dialogueBox);
 			}
 		}
 
@@ -1212,7 +1210,7 @@ class PlayState extends MusicBeatState
 
 	function technobladeDialogue(?dialogueBox:DialogueBox):Void
 	{
-		/*
+		
 		if(dialogueBox != null)
 		{
 			inCutscene = true;
@@ -1220,7 +1218,6 @@ class PlayState extends MusicBeatState
 			add(dialogueBox);
 		}
 		else
-		*/
 			startCountdown();
 	}
 
