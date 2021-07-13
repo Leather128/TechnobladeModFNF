@@ -243,8 +243,8 @@ class PlayState extends MusicBeatState
 	var firelmanburgdead:FlxSprite;
 	var doometernalsky:FlxSprite;
 
-	// technomania (nvm)
-	//var leatherBoppin:FlxSprite;
+	// technomania
+	var leatherBoppin:FlxSprite;
 
 	// API stuff
 	
@@ -475,8 +475,7 @@ class PlayState extends MusicBeatState
 
 				if(PlayState.SONG.song.toLowerCase() == "technomania" && stageCheck != 'lmanburg-fire')
 				{
-					/*
-					leatherBoppin = new FlxSprite(-100, 350);
+					leatherBoppin = new FlxSprite(-100 + -10000, 350);
 					leatherBoppin.frames = Paths.getSparrowAtlas("lmanburg/bg leather", "technoWeek1");
 					leatherBoppin.setGraphicSize(Std.int(leatherBoppin.width * 0.4));
 					leatherBoppin.updateHitbox();
@@ -486,9 +485,8 @@ class PlayState extends MusicBeatState
 					leatherBoppin.animation.addByPrefix("bop", "bop", 24, false);
 					leatherBoppin.animation.play("bop");
 					leatherBoppin.alpha = 0;
-					*/
 
-					//add(leatherBoppin);
+					add(leatherBoppin);
 				}
 
 				if(stageCheck == 'lmanburg-fire')
@@ -1354,10 +1352,8 @@ class PlayState extends MusicBeatState
 		}
 		#end
 
-		/*
 		if(SONG.song.toLowerCase() == "technomania")
 			FlxTween.tween(leatherBoppin, {alpha: 1}, 1, {});
-		*/
 
 		talking = false;
 		startedCountdown = true;
@@ -3995,7 +3991,7 @@ class PlayState extends MusicBeatState
 			case 'lmanburg':
 				if(FlxG.save.data.distractions && SONG.song.toLowerCase() == "technomania")
 				{
-					//leatherBoppin.animation.play("bop", true);
+					leatherBoppin.animation.play("bop", true);
 				}
 		}
 	}
