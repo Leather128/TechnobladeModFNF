@@ -51,7 +51,7 @@ class DialogueBox extends FlxSpriteGroup
 
 		box = new FlxSprite(-20, 45);
 
-		var htmlStuffs = ["confrontance", "agro-nerd", "the-potato-warrior", "the-master-plan", "the-art-of-war", "sun-tzu"];
+		var htmlStuffs = ["confrontance", "agro-nerd", "the-potato-warrior", "the-master-plan", "the-art-of-war", "sun-tzu", "technomania"];
 		
 		var hasDialog = false;
 
@@ -111,7 +111,7 @@ class DialogueBox extends FlxSpriteGroup
 		swagDialogue = new FlxTypeText(240, 500, Std.int(FlxG.width * 0.6), "", 32);
 		swagDialogue.font = 'Pixel Arial 11 Bold';
 		swagDialogue.color = FlxColor.BLACK;
-		swagDialogue.sounds = [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
+		swagDialogue.sounds = [];
 		add(swagDialogue);
 	}
 
@@ -190,7 +190,7 @@ class DialogueBox extends FlxSpriteGroup
 		{
 			case 'dad':
 				portraitRight.visible = false;
-
+				
 				if (!portraitLeft.visible)
 					portraitLeft.visible = true;
 
@@ -206,6 +206,7 @@ class DialogueBox extends FlxSpriteGroup
 
 		portraits();
 
+		swagDialogue.sounds = [FlxG.sound.load(Paths.sound('text/' + curCharacter), 1)];
 		portraitLeft.animation.play('enter');
 		portraitRight.animation.play('enter');
 	}

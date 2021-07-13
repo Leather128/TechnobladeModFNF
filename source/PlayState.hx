@@ -1086,7 +1086,7 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'thorns':
 					schoolIntro(doof);
-				case 'confrontance' | 'agro-nerd':
+				case 'confrontance' | 'agro-nerd' | 'the-master-plan' | 'the-art-of-war' | 'sun-tzu':
 					technobladeDialogue(doof);
 				case 'the-potato-warrior':
 					lmanburgCutscene(doof);
@@ -1112,11 +1112,12 @@ class PlayState extends MusicBeatState
 					firestageFront.visible = true;
 
 					startCountdown();
+				case 'technomania':
+					technobladeDialogue(doof);
 				default:
 					startCountdown();
 			}
 		}
-
 		if (!loadRep)
 			rep = new Replay("na");
 
@@ -2198,7 +2199,7 @@ class PlayState extends MusicBeatState
 
 		if (FlxG.keys.justPressed.ZERO)
 		{
-			FlxG.switchState(new AnimationDebug(SONG.player1));
+			FlxG.switchState(new AfnimationDebug(SONG.player1));
 			FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN,handleInput);
 			#if windows
 			if (luaModchart != null)
