@@ -59,21 +59,15 @@ class VideoHandler
 	}
 	
 	public function client_onMetaData (metaData:Dynamic) {
-		
 		video.attachNetStream (netStream);
 		
 		video.width = FlxG.width;
 		video.height = FlxG.height;
-		
 	}
-	
 	
 	public function netStream_onAsyncError (event:AsyncErrorEvent):Void {
-		
 		trace ("Error loading video");
-		
 	}
-	
 	
 	public function netConnection_onNetStatus (event:NetStatusEvent):Void {
 		trace (event.info.code);
