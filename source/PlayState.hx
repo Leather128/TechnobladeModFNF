@@ -243,6 +243,9 @@ class PlayState extends MusicBeatState
 	var firelmanburgdead:FlxSprite;
 	var doometernalsky:FlxSprite;
 
+	// technomania (nvm)
+	//var leatherBoppin:FlxSprite;
+
 	// API stuff
 	
 	public function addObject(object:FlxBasic) { add(object); }
@@ -469,6 +472,24 @@ class PlayState extends MusicBeatState
 				stageFront.scrollFactor.set(0.9, 0.9);
 				stageFront.active = false;
 				add(stageFront);
+
+				if(PlayState.SONG.song.toLowerCase() == "technomania" && stageCheck != 'lmanburg-fire')
+				{
+					/*
+					leatherBoppin = new FlxSprite(-100, 350);
+					leatherBoppin.frames = Paths.getSparrowAtlas("lmanburg/bg leather", "technoWeek1");
+					leatherBoppin.setGraphicSize(Std.int(leatherBoppin.width * 0.4));
+					leatherBoppin.updateHitbox();
+					leatherBoppin.antialiasing = true;
+					leatherBoppin.scrollFactor.set(0.7, 0.7);
+
+					leatherBoppin.animation.addByPrefix("bop", "bop", 24, false);
+					leatherBoppin.animation.play("bop");
+					leatherBoppin.alpha = 0;
+					*/
+
+					//add(leatherBoppin);
+				}
 
 				if(stageCheck == 'lmanburg-fire')
 				{
@@ -1332,6 +1353,11 @@ class PlayState extends MusicBeatState
 			luaModchart.executeState('start',[songLowercase]);
 		}
 		#end
+
+		/*
+		if(SONG.song.toLowerCase() == "technomania")
+			FlxTween.tween(leatherBoppin, {alpha: 1}, 1, {});
+		*/
 
 		talking = false;
 		startedCountdown = true;
@@ -3963,77 +3989,14 @@ class PlayState extends MusicBeatState
 		{
 			boyfriend.playAnim('idle');
 		}
-		
-
-		if (curBeat % 8 == 7 && curSong == 'Bopeebo')
-		{
-			boyfriend.playAnim('hey', true);
-		}
-
-		if (curBeat % 16 == 15 && SONG.song == 'Tutorial' && dad.curCharacter == 'gf' && curBeat > 16 && curBeat < 48)
-			{
-				boyfriend.playAnim('hey', true);
-				dad.playAnim('cheer', true);
-			}
 
 		switch (curStage)
 		{
-			case 'school':
-				if(FlxG.save.data.distractions){
-					bgGirls.dance();
-				}
-
-			case 'mall':
-				if(FlxG.save.data.distractions){
-					upperBoppers.animation.play('bop', true);
-					bottomBoppers.animation.play('bop', true);
-					santa.animation.play('idle', true);
-				}
-
-			case 'limo':
-				if(FlxG.save.data.distractions){
-					grpLimoDancers.forEach(function(dancer:BackgroundDancer)
-						{
-							dancer.dance();
-						});
-		
-						if (FlxG.random.bool(10) && fastCarCanDrive)
-							fastCarDrive();
-				}
-			case "philly":
-				if(FlxG.save.data.distractions){
-					if (!trainMoving)
-						trainCooldown += 1;
-	
-					if (curBeat % 4 == 0)
-					{
-						phillyCityLights.forEach(function(light:FlxSprite)
-						{
-							light.visible = false;
-						});
-	
-						curLight = FlxG.random.int(0, phillyCityLights.length - 1);
-	
-						phillyCityLights.members[curLight].visible = true;
-						// phillyCityLights.members[curLight].alpha = 1;
-				}
-
-				}
-
-				if (curBeat % 8 == 4 && FlxG.random.bool(30) && !trainMoving && trainCooldown > 8)
+			case 'lmanburg':
+				if(FlxG.save.data.distractions && SONG.song.toLowerCase() == "technomania")
 				{
-					if(FlxG.save.data.distractions){
-						trainCooldown = FlxG.random.int(-4, 0);
-						trainStart();
-					}
+					//leatherBoppin.animation.play("bop", true);
 				}
-		}
-
-		if (isHalloween && FlxG.random.bool(10) && curBeat > lightningStrikeBeat + lightningOffset)
-		{
-			if(FlxG.save.data.distractions){
-				lightningStrikeShit();
-			}
 		}
 	}
 

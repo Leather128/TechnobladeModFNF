@@ -24,7 +24,8 @@ class MenuCharacter extends FlxSprite
 	private static var settings:Map<String, CharacterSetting> = [
 		'bf' => new CharacterSetting(0, -20, 1.0, true),
 		'gf' => new CharacterSetting(50, 80, 1.5, true),
-		'techno' => new CharacterSetting(-15, 130)
+		'techno' => new CharacterSetting(40, 120, 1.5),
+		'sun-tzu' => new CharacterSetting(-15, 160, 1)
 	];
 
 	private var flipped:Bool = false;
@@ -41,7 +42,8 @@ class MenuCharacter extends FlxSprite
 		animation.addByPrefix('bf', "BF idle dance white", 24);
 		animation.addByPrefix('bfConfirm', 'BF HEY!!', 24, false);
 		animation.addByPrefix('gf', "GF Dancing Beat WHITE", 24);
-		animation.addByPrefix('techno', "Dad idle dance BLACK LINE", 24);
+		animation.addByPrefix('techno', "Technoblade Idle", 12);
+		animation.addByPrefix('sun-tzu', "Sun Tzu Idle", 12);
 
 		setGraphicSize(Std.int(width * scale));
 		updateHitbox();
