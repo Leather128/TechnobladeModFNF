@@ -50,22 +50,12 @@ class DialogueBox extends FlxSpriteGroup
 		}, 5);
 
 		box = new FlxSprite(-20, 45);
-
-		var htmlStuffs = ["confrontance", "agro-nerd", "the-potato-warrior", "the-master-plan", "the-art-of-war", "sun-tzu", "technomania"];
-		
-		var hasDialog = false;
-
 		box.frames = Paths.getSparrowAtlas('dialogue/normal-dialogueBox');
 		box.setGraphicSize(Std.int(box.width / 4));
 		box.updateHitbox();
 		box.animation.addByPrefix('normalOpen', 'spawn', 24, false);
 		box.animation.addByIndices('normal', 'spawn', [11], "", 24);
 		box.antialiasing = true;
-
-		hasDialog = htmlStuffs.contains(PlayState.SONG.song.toLowerCase());
-		
-		if (!hasDialog)
-			return;
 
 		this.dialogueList = CoolUtil.coolTextFile(Paths.txt(PlayState.SONG.song.toLowerCase() + "/dialogue"));
 		
@@ -147,9 +137,6 @@ class DialogueBox extends FlxSpriteGroup
 				{
 					isEnding = true;
 
-					if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'thorns')
-						FlxG.sound.music.fadeOut(2.2, 0);
-
 					new FlxTimer().start(0.2, function(tmr:FlxTimer)
 					{
 						box.alpha -= 1 / 5;
@@ -220,7 +207,9 @@ class DialogueBox extends FlxSpriteGroup
 		else
 			selectedPortrait = portraitLeft;
 
-		trace(curCharacter);
+		if(curCharacter == null)
+			curCharacter = "nobody";
+
 		selectedPortrait.frames = Paths.getSparrowAtlas('dialogue/' + curCharacter + '-portrait');
 		selectedPortrait.animation.addByPrefix('enter', 'portrait', 24, false);
 	}
