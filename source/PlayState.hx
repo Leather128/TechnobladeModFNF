@@ -113,7 +113,7 @@ class PlayState extends MusicBeatState
 	var detailsPausedText:String = "";
 	#end
 
-	private var vocals:FlxSound;
+	public var vocals:FlxSound;
 
 	public var originalX:Float;
 
@@ -1971,7 +1971,7 @@ class PlayState extends MusicBeatState
 		#end
 	}
 
-	private var paused:Bool = false;
+	public var paused:Bool = false;
 	var startedCountdown:Bool = false;
 	var canPause:Bool = true;
 	var nps:Int = 0;
