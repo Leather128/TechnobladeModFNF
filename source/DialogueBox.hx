@@ -24,8 +24,6 @@ class DialogueBox extends FlxSpriteGroup
 	// SECOND DIALOGUE FOR THE PIXEL SHIT INSTEAD???
 	var swagDialogue:FlxTypeText;
 
-	var dropText:FlxText;
-
 	public var finishThing:Void->Void;
 
 	var portraitLeft:FlxSprite;
@@ -93,11 +91,6 @@ class DialogueBox extends FlxSpriteGroup
 		box.screenCenter(X);
 		portraitLeft.screenCenter(X);
 
-		dropText = new FlxText(242, 502, Std.int(FlxG.width * 0.6), "", 32);
-		dropText.font = 'Pixel Arial 11 Bold';
-		dropText.color = FlxColor.GRAY;
-		//add(dropText);
-
 		swagDialogue = new FlxTypeText(240, 500, Std.int(FlxG.width * 0.6), "", 32);
 		swagDialogue.font = 'Pixel Arial 11 Bold';
 		swagDialogue.color = FlxColor.BLACK;
@@ -110,8 +103,6 @@ class DialogueBox extends FlxSpriteGroup
 
 	override function update(elapsed:Float)
 	{
-		dropText.text = swagDialogue.text;
-
 		if (box.animation.curAnim != null)
 		{
 			if (box.animation.curAnim.name == 'normalOpen' && box.animation.curAnim.finished)
@@ -144,7 +135,6 @@ class DialogueBox extends FlxSpriteGroup
 						portraitLeft.visible = false;
 						portraitRight.visible = false;
 						swagDialogue.alpha -= 1 / 5;
-						dropText.alpha = swagDialogue.alpha;
 					}, 5);
 
 					new FlxTimer().start(1.2, function(tmr:FlxTimer)
