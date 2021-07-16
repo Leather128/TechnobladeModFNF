@@ -132,6 +132,7 @@ class TitleState extends MusicBeatState
 	var gfDance:FlxSprite;
 	var danceLeft:Bool = false;
 	var titleText:FlxSprite;
+	var lmanburgdead:FlxSprite;
 
 	function startIntro()
 	{
@@ -160,22 +161,29 @@ class TitleState extends MusicBeatState
 		Conductor.changeBPM(102);
 		persistentUpdate = true;
 
-		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
-		add(bg);
+		lmanburgdead = new FlxSprite(640, 360);
+		lmanburgdead.frames = Paths.getSparrowAtlas('lmanburg3');
+		lmanburgdead.antialiasing = true;
+		lmanburgdead.animation.addByPrefix('bump', 'plswork', 24);
+		lmanburgdead.animation.play('plswork');
+		lmanburgdead.setGraphicSize(Std.int(lmanburgdead.width * 1));
+		lmanburgdead.updateHitbox();
 
-		logoBl = new FlxSprite(-150, -100);
+		logoBl = new FlxSprite(200, -50);
 		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
 		logoBl.antialiasing = true;
 		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
 		logoBl.animation.play('bump');
+		logoBl.setGraphicSize(Std.int(logoBl.width * 0.7));
 		logoBl.updateHitbox();
 
-		gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
+		/*gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
 		gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');
 		gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 		gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 		gfDance.antialiasing = true;
-		add(gfDance);
+		gfDance.setGraphicSize(Std.int(gfDance.width * 0));
+		add(gfDance);*/
 		add(logoBl);
 
 		titleText = new FlxSprite(100, FlxG.height * 0.8);
@@ -360,12 +368,6 @@ class TitleState extends MusicBeatState
 
 		logoBl.animation.play('bump');
 		danceLeft = !danceLeft;
-
-		if (danceLeft)
-			gfDance.animation.play('danceRight');
-		else
-			gfDance.animation.play('danceLeft');
-
 		FlxG.log.add(curBeat);
 
 		switch (curBeat)
