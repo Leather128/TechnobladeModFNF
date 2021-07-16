@@ -1118,7 +1118,7 @@ class PlayState extends MusicBeatState
 			switch (curSong.toLowerCase())
 			{
 				case 'the-potato-warrior':
-					/*remove(skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu);
+					remove(skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu);
 					remove(herecomesthesun);
 					remove(wtfisthis);
 					remove(lmanburgcool);
@@ -1128,9 +1128,8 @@ class PlayState extends MusicBeatState
 					firelmanburgdead.visible = true;
 					lava.visible = true;
 					wtfisfire.visible = true;
-					firestageFront.visible = true;*/ 
-					lmanburgCutscene(doof);
-					//startCountdown();
+					firestageFront.visible = true;
+					startCountdown();
 				case 'technomania':
 					technobladeDialogue(doof);
 				default:
