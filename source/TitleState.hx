@@ -161,20 +161,19 @@ class TitleState extends MusicBeatState
 		Conductor.changeBPM(102);
 		persistentUpdate = true;
 
-		lmanburgdead = new FlxSprite(640, 360);
-		lmanburgdead.frames = Paths.getSparrowAtlas('lmanburg3');
-		lmanburgdead.antialiasing = true;
-		lmanburgdead.animation.addByPrefix('bump', 'plswork', 24);
-		lmanburgdead.animation.play('plswork');
-		lmanburgdead.setGraphicSize(Std.int(lmanburgdead.width * 1));
-		lmanburgdead.updateHitbox();
+		lmanburgdead = new FlxSprite(-640, -360);
+		lmanburgdead.loadGraphic(Paths.image('lmanburg3'));
+		lmanburgdead.setGraphicSize(FlxG.width);
+		add(lmanburgdead);
 
-		logoBl = new FlxSprite(200, -50);
+		logoBl = new FlxSprite(0, 0);
 		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
 		logoBl.antialiasing = true;
 		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
 		logoBl.animation.play('bump');
 		logoBl.setGraphicSize(Std.int(logoBl.width * 0.7));
+		logoBl.screenCenter();
+		logoBl.x += 100;
 		logoBl.updateHitbox();
 
 		/*gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
