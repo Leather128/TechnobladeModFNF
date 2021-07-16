@@ -1118,7 +1118,7 @@ class PlayState extends MusicBeatState
 			switch (curSong.toLowerCase())
 			{
 				case 'the-potato-warrior':
-					remove(skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu);
+					/*remove(skybutnotthefangirlisweartogoditstheatmosphereskypleasenocancelbbpanzu);
 					remove(herecomesthesun);
 					remove(wtfisthis);
 					remove(lmanburgcool);
@@ -1128,9 +1128,9 @@ class PlayState extends MusicBeatState
 					firelmanburgdead.visible = true;
 					lava.visible = true;
 					wtfisfire.visible = true;
-					firestageFront.visible = true;
-
-					startCountdown();
+					firestageFront.visible = true;*/ 
+					lmanburgCutscene(doof);
+					//startCountdown();
 				case 'technomania':
 					technobladeDialogue(doof);
 				default:
@@ -1168,13 +1168,13 @@ class PlayState extends MusicBeatState
 				case 'part1':
 					technoCutscene.animation.play("part2", true);
 				case 'part2':
-					var flintandsteel = new FlxSprite(dad.x, dad.y);
+					var flintandsteel = new FlxSprite(dad.x+200, dad.y);
 					flintandsteel.frames = Paths.getSparrowAtlas("flintandsteel", "technoWeek1");
 					flintandsteel.animation.addByPrefix("flying", "fs", 12);
 					flintandsteel.setGraphicSize(Std.int(flintandsteel.width * 0.3));
 					flintandsteel.animation.play("flying");
-					flintandsteel.velocity.x = 1400;
-					flintandsteel.velocity.y = -100;
+					flintandsteel.velocity.x = 10000;
+					flintandsteel.velocity.y = -500;
 					add(flintandsteel);
 
 					FlxG.sound.play(Paths.sound('flint-and-steel', 'technoWeek1'));

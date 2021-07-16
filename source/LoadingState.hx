@@ -26,6 +26,8 @@ class LoadingState extends MusicBeatState
 	var logo:FlxSprite;
 	var gfDance:FlxSprite;
 	var danceLeft = false;
+	var lmanburgdead:FlxSprite;
+	var logoBl:FlxSprite;
 	
 	function new(target:FlxState, stopMusic:Bool)
 	{
@@ -36,21 +38,29 @@ class LoadingState extends MusicBeatState
 	
 	override function create()
 	{
-		logo = new FlxSprite(-150, -100);
+		lmanburgdead = new FlxSprite(-640, -360);
+		lmanburgdead.loadGraphic(Paths.image('lmanburg3'));
+		lmanburgdead.setGraphicSize(FlxG.width);
+		add(lmanburgdead);
+
+		logo = new FlxSprite(0, 0);
 		logo.frames = Paths.getSparrowAtlas('logoBumpin');
 		logo.antialiasing = true;
 		logo.animation.addByPrefix('bump', 'logo bumpin', 24);
 		logo.animation.play('bump');
+		logo.setGraphicSize(Std.int(logo.width * 0.7));
+		logo.screenCenter();
+		logo.x += 100;
 		logo.updateHitbox();
 		// logoBl.screenCenter();
 		// logoBl.color = FlxColor.BLACK;
 
-		gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
+		/*gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
 		gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');
 		gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 		gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
-		gfDance.antialiasing = true;
-		add(gfDance);
+		gfDance.antialiasing = true;*/
+		add(lmanburgdead);
 		add(logo);
 		
 		initSongsManifest().onComplete
@@ -111,10 +121,10 @@ class LoadingState extends MusicBeatState
 		logo.animation.play('bump');
 		danceLeft = !danceLeft;
 		
-		if (danceLeft)
+		/*if (danceLeft)
 			gfDance.animation.play('danceRight');
 		else
-			gfDance.animation.play('danceLeft');
+			gfDance.animation.play('danceLeft');*/
 	}
 	
 	override function update(elapsed:Float)
