@@ -828,12 +828,17 @@ class PlayState extends MusicBeatState
 			case 'sun-tzu':
 				camPos.y -= 150;
 				dad.y -= 150;
+			case 'techno-egirl':
+				camPos.y -= 200;
+				camPos.x += 50;
+				dad.x += 50;
+				dad.y -= 200;
 		}
 
 
 		
 		boyfriend = new Boyfriend(770, 450, SONG.player1);
-
+		}
 		// REPOSITIONING PER STAGE
 		switch (curStage)
 		{
