@@ -817,14 +817,11 @@ class PlayState extends MusicBeatState
 			case 'pico':
 				camPos.x += 600;
 				dad.y += 300;
-			case 'technoblade':
+			case 'technoblade' | 'technoblade-angry':
 				camPos.x -= 350;
 				dad.x -= 350;
-				dad.y += 0;
-			case 'technoblade-angry':
-				camPos.x -= 350;
-				dad.x -= 350;
-				dad.y += 0;
+			case 'new-technoblade':
+				dad.y += 300;
 			case 'sun-tzu':
 				camPos.y -= 150;
 				dad.y -= 150;
@@ -2220,7 +2217,7 @@ class PlayState extends MusicBeatState
 
 		if (FlxG.keys.justPressed.ZERO)
 		{
-			FlxG.switchState(new AfnimationDebug(SONG.player1));
+			FlxG.switchState(new AnimationDebug(SONG.player1));
 			FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN,handleInput);
 			#if windows
 			if (luaModchart != null)

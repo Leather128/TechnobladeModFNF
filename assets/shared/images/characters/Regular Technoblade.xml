@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Regular Technoblade.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Technoblade Idle instance 10000" x="2887" y="1" width="494" height="457"/>
+	<SubTexture name="Technoblade Idle instance 10001" x="2887" y="1" width="494" height="457"/>
+	<SubTexture name="Technoblade Idle instance 10002" x="3381" y="1" width="494" height="457"/>
+	<SubTexture name="Technoblade Idle instance 10003" x="2887" y="458" width="494" height="457"/>
+	<SubTexture name="Technoblade Idle instance 10004" x="2887" y="458" width="494" height="457"/>
+	<SubTexture name="Technoblade Idle instance 10005" x="3381" y="458" width="494" height="457"/>
+	<SubTexture name="Technoblade Idle instance 10006" x="1" y="472" width="494" height="457"/>
+	<SubTexture name="Technoblade Idle instance 10007" x="495" y="472" width="494" height="457"/>
+	<SubTexture name="Technoblade Sing Down instance 10000" x="3611" y="915" width="449" height="455"/>
+	<SubTexture name="Technoblade Sing Down instance 10001" x="3611" y="915" width="449" height="455"/>
+	<SubTexture name="Technoblade Sing Down instance 10002" x="1" y="929" width="449" height="455"/>
+	<SubTexture name="Technoblade Sing Down instance 10003" x="450" y="929" width="449" height="455"/>
+	<SubTexture name="Technoblade Sing Down instance 10004" x="899" y="970" width="449" height="455"/>
+	<SubTexture name="Technoblade Sing Down instance 10005" x="1348" y="970" width="449" height="455"/>
+	<SubTexture name="Technoblade Sing Down instance 10006" x="1797" y="970" width="449" height="455"/>
+	<SubTexture name="Technoblade Sing Down instance 10007" x="2246" y="970" width="449" height="455"/>
+	<SubTexture name="Technoblade Sing Left instance 10000" x="3611" y="1370" width="388" height="461"/>
+	<SubTexture name="Technoblade Sing Left instance 10001" x="3611" y="1370" width="388" height="461"/>
+	<SubTexture name="Technoblade Sing Left instance 10002" x="1" y="1384" width="388" height="461"/>
+	<SubTexture name="Technoblade Sing Left instance 10003" x="1" y="1384" width="388" height="461"/>
+	<SubTexture name="Technoblade Sing Left instance 10004" x="389" y="1384" width="388" height="461"/>
+	<SubTexture name="Technoblade Sing Left instance 10005" x="2695" y="1413" width="388" height="461"/>
+	<SubTexture name="Technoblade Sing Left instance 10006" x="2695" y="1413" width="388" height="461"/>
+	<SubTexture name="Technoblade Sing Left instance 10007" x="3083" y="1413" width="388" height="461"/>
+	<SubTexture name="Technoblade Sing Right instance 10000" x="1" y="1" width="481" height="471"/>
+	<SubTexture name="Technoblade Sing Right instance 10001" x="1" y="1" width="481" height="471"/>
+	<SubTexture name="Technoblade Sing Right instance 10002" x="482" y="1" width="481" height="471"/>
+	<SubTexture name="Technoblade Sing Right instance 10003" x="963" y="1" width="481" height="471"/>
+	<SubTexture name="Technoblade Sing Right instance 10004" x="1444" y="1" width="481" height="471"/>
+	<SubTexture name="Technoblade Sing Right instance 10005" x="1925" y="1" width="481" height="471"/>
+	<SubTexture name="Technoblade Sing Right instance 10006" x="1925" y="1" width="481" height="471"/>
+	<SubTexture name="Technoblade Sing Right instance 10007" x="2406" y="1" width="481" height="471"/>
+	<SubTexture name="Technoblade Sing Up instance 10000" x="989" y="472" width="437" height="498"/>
+	<SubTexture name="Technoblade Sing Up instance 10001" x="989" y="472" width="437" height="498"/>
+	<SubTexture name="Technoblade Sing Up instance 10002" x="1426" y="472" width="437" height="498"/>
+	<SubTexture name="Technoblade Sing Up instance 10003" x="1426" y="472" width="437" height="498"/>
+	<SubTexture name="Technoblade Sing Up instance 10004" x="1863" y="472" width="437" height="498"/>
+	<SubTexture name="Technoblade Sing Up instance 10005" x="2300" y="472" width="437" height="498"/>
+	<SubTexture name="Technoblade Sing Up instance 10006" x="2737" y="915" width="437" height="498"/>
+	<SubTexture name="Technoblade Sing Up instance 10007" x="3174" y="915" width="437" height="498"/>
+</TextureAtlas>

@@ -184,6 +184,27 @@ class Character extends FlxSprite
 				//updateHitbox();
 			
 				playAnim('idle');
+
+			case 'new-technoblade':
+				frames = Paths.getSparrowAtlas('characters/Regular Technoblade', 'shared');
+
+				animation.addByPrefix('idle', 'Technoblade Idle', 24, false);
+
+				animation.addByPrefix('singLEFT', 'Technoblade Sing Left', 24, false);
+				animation.addByPrefix('singDOWN', 'Technoblade Sing Down', 24, false);
+				animation.addByPrefix('singUP', 'Technoblade Sing Up', 24, false);
+				animation.addByPrefix('singRIGHT', 'Technoblade Sing Right', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", -13, 40);
+				addOffset("singRIGHT", 1, 14);
+				addOffset("singLEFT", -130);
+				addOffset("singDOWN", -120);
+
+				//setGraphicSize(Std.int(width * 1.5));
+				//updateHitbox();
+
+				playAnim('idle');
 		}
 
 		dance();
