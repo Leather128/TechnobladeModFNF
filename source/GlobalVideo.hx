@@ -1,5 +1,6 @@
 package;
 
+#if !mac
 import openfl.Lib;
 
 class GlobalVideo
@@ -93,3 +94,4 @@ class GlobalVideo
 		return null;
 	}
 }
+#end

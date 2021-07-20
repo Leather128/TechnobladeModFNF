@@ -49,7 +49,9 @@ class Main extends Sprite
 		}
 	}
 
+	#if !mac
 	public static var webmHandler:WebmHandler;
+	#end
 
 	private function init(?E:Event):Void
 	{

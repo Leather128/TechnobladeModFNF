@@ -1,5 +1,6 @@
 package;
 
+#if !mac
 import flixel.FlxG;
 import openfl.display.Sprite;
 #if desktop
@@ -167,3 +168,4 @@ class WebmHandler
 	}
 	#end
 }
+#end

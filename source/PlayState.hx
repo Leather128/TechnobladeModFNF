@@ -1597,8 +1597,10 @@ class PlayState extends MusicBeatState
 			default: allowedToHeadbang = false;
 		}
 
+		#if !mac
 		if (useVideo)
 			GlobalVideo.get().resume();
+		#end
 		
 		#if windows
 		// Updating Discord Rich Presence (with Time Left)
@@ -1987,7 +1989,7 @@ class PlayState extends MusicBeatState
 		if (PlayStateChangeables.botPlay && FlxG.keys.justPressed.ONE)
 			camHUD.visible = !camHUD.visible;
 
-
+		#if !mac
 		if (useVideo && GlobalVideo.get() != null && !stopUpdate)
 			{		
 				if (GlobalVideo.get().ended && !removedVideo)
@@ -1998,6 +2000,7 @@ class PlayState extends MusicBeatState
 					removedVideo = true;
 				}
 			}
+		#end
 
 
 		
@@ -2127,6 +2130,7 @@ class PlayState extends MusicBeatState
 
 		if (FlxG.keys.justPressed.SEVEN)
 		{
+			#if !mac
 			if (useVideo)
 				{
 					GlobalVideo.get().stop();
@@ -2135,6 +2139,7 @@ class PlayState extends MusicBeatState
 					FlxG.stage.window.onFocusIn.remove(focusIn);
 					removedVideo = true;
 				}
+			#end
 			#if windows
 			DiscordClient.changePresence("Chart Editor", null, null, true);
 			#end
@@ -2775,10 +2780,12 @@ class PlayState extends MusicBeatState
 		FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN,handleInput);
 		if (useVideo)
 			{
+				#if !mac
 				GlobalVideo.get().stop();
 				FlxG.stage.window.onFocusOut.remove(focusOut);
 				FlxG.stage.window.onFocusIn.remove(focusIn);
 				PlayState.instance.remove(PlayState.instance.videoSprite);
+				#end
 			}
 
 		if (isStoryMode)
@@ -3446,7 +3453,9 @@ class PlayState extends MusicBeatState
 			public var fuckingVolume:Float = 1;
 			public var useVideo = false;
 
+			#if !mac
 			public static var webmHandler:WebmHandler;
+			#end
 
 			public var playingDathing = false;
 
@@ -3475,6 +3484,7 @@ class PlayState extends MusicBeatState
 
 			public function backgroundVideo(source:String) // for background videos
 				{
+					#if !mac
 					#if cpp
 					useVideo = true;
 			
@@ -3526,6 +3536,7 @@ class PlayState extends MusicBeatState
 						webmHandler.pause();
 					else
 						webmHandler.resume();
+					#end
 					#end
 				}
 
