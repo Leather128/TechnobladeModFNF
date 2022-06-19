@@ -2,9 +2,6 @@ package;
 
 import flixel.input.gamepad.FlxGamepad;
 import openfl.Lib;
-#if windows
-import llua.Lua;
-#end
 import Controls.Control;
 import flixel.FlxG;
 import flixel.FlxSprite;
@@ -22,11 +19,10 @@ class PauseSubState extends MusicBeatSubstate
 {
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
-	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Exit to menu', '-', '-', '-', '-'];
+	var menuItems:Array<String> = ['Resume', 'Restart Song', 'Exit to menu'];
 	var curSelected:Int = 0;
 
 	var pauseMusic:FlxSound;
-	var perSongOffset:FlxText;
 	
 	var offsetChanged:Bool = false;
 
@@ -38,6 +34,7 @@ class PauseSubState extends MusicBeatSubstate
 		if (PlayState.instance.useVideo)
 		{
 			menuItems.remove("Resume");
+
 			if (GlobalVideo.get().playing)
 				GlobalVideo.get().pause();
 		}
@@ -80,13 +77,6 @@ class PauseSubState extends MusicBeatSubstate
 
 		grpMenuShit = new FlxTypedGroup<Alphabet>();
 		add(grpMenuShit);
-		perSongOffset = new FlxText(5, FlxG.height - 18, 0, "Additive Offset (Left, Right): " + PlayState.songOffset + " - Description - " + 'Adds value to global offset, per song.', 12);
-		perSongOffset.scrollFactor.set();
-		perSongOffset.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		
-		#if cpp
-			add(perSongOffset);
-		#end
 
 		for (i in 0...menuItems.length)
 		{
@@ -118,7 +108,6 @@ class PauseSubState extends MusicBeatSubstate
 		var leftP = controls.LEFT_P;
 		var rightP = controls.RIGHT_P;
 		var accepted = controls.ACCEPT;
-		var oldOffset:Float = 0;
 
 		if (gamepad != null && KeyBinds.gamepad)
 		{
@@ -128,22 +117,10 @@ class PauseSubState extends MusicBeatSubstate
 			rightP = gamepad.justPressed.DPAD_RIGHT;
 		}
 
-		// pre lowercasing the song name (update)
-		var songLowercase = StringTools.replace(PlayState.SONG.song, " ", "-").toLowerCase();
-		switch (songLowercase) {
-			case 'dad-battle': songLowercase = 'dadbattle';
-			case 'philly-nice': songLowercase = 'philly';
-		}
-		var songPath = 'assets/data/' + songLowercase + '/';
-
 		if (upP)
-		{
 			changeSelection(-1);
-   
-		}else if (downP)
-		{
+		if (downP)
 			changeSelection(1);
-		}
 
 		if (accepted)
 		{
@@ -162,6 +139,7 @@ class PauseSubState extends MusicBeatSubstate
 						PlayState.instance.removedVideo = true;
 					}
 					#end
+
 					FlxG.resetState();
 				case "Exit to menu":
 					#if !mac
@@ -172,13 +150,16 @@ class PauseSubState extends MusicBeatSubstate
 						PlayState.instance.removedVideo = true;
 					}
 					#end
+
 					if(PlayState.loadRep)
 					{
 						FlxG.save.data.botplay = false;
 						FlxG.save.data.scrollSpeed = 1;
 						FlxG.save.data.downscroll = false;
 					}
+
 					PlayState.loadRep = false;
+
 					#if windows
 					if (PlayState.luaModchart != null)
 					{
@@ -186,17 +167,15 @@ class PauseSubState extends MusicBeatSubstate
 						PlayState.luaModchart = null;
 					}
 					#end
-					if (FlxG.save.data.fpsCap > 290)
-						(cast (Lib.current.getChildAt(0), Main)).setFPSCap(290);
-					
-					FlxG.switchState(new MainMenuState());
-			}
-		}
 
-		if (FlxG.keys.justPressed.J)
-		{
-			// for reference later!
-			// PlayerSettings.player1.controls.replaceBinding(Control.LEFT, Keys, FlxKey.J, null);
+					if (FlxG.save.data.fpsCap > 1000)
+						FlxG.stage.frameRate = 1000;
+					
+					if(PlayState.isStoryMode)
+						FlxG.switchState(new StoryMenuState());
+					else
+						FlxG.switchState(new FreeplayState());
+			}
 		}
 	}
 
@@ -216,21 +195,15 @@ class PauseSubState extends MusicBeatSubstate
 		if (curSelected >= menuItems.length)
 			curSelected = 0;
 
-		var bullShit:Int = 0;
-
-		for (item in grpMenuShit.members)
+		for (bullShit in 0...grpMenuShit.members.length)
 		{
-			item.targetY = bullShit - curSelected;
-			bullShit++;
+			var item:Alphabet = grpMenuShit.members[bullShit];
 
+			item.targetY = bullShit - curSelected;
 			item.alpha = 0.6;
-			// item.setGraphicSize(Std.int(item.width * 0.8));
 
 			if (item.targetY == 0)
-			{
 				item.alpha = 1;
-				// item.setGraphicSize(Std.int(item.width));
-			}
 		}
 	}
 }

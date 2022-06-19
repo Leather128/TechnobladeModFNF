@@ -27,14 +27,15 @@ class MusicBeatState extends FlxUIState
 
 	override function create()
 	{
-		(cast (Lib.current.getChildAt(0), Main)).setFPSCap(FlxG.save.data.fpsCap);
+		FlxG.stage.frameRate = FlxG.save.data.fpsCap;
 
 		if (transIn != null)
 			trace('reg ' + transIn.region);
 
 		super.create();
-	}
 
+		openfl.system.System.gc();
+	}
 
 	var array:Array<FlxColor> = [
 		FlxColor.fromRGB(148, 0, 211),
@@ -60,18 +61,23 @@ class MusicBeatState extends FlxUIState
 			stepHit();
 
 		if (FlxG.save.data.fpsRain && skippedFrames >= 6)
-			{
-				if (currentColor >= array.length)
-					currentColor = 0;
-				(cast (Lib.current.getChildAt(0), Main)).changeFPSColor(array[currentColor]);
-				currentColor++;
-				skippedFrames = 0;
-			}
-			else
-				skippedFrames++;
+		{
+			if (currentColor >= array.length)
+				currentColor = 0;
+			
+			(cast (Lib.current.getChildAt(0), Main)).changeFPSColor(array[currentColor]);
 
-		if ((cast (Lib.current.getChildAt(0), Main)).getFPSCap != FlxG.save.data.fpsCap && FlxG.save.data.fpsCap <= 290)
-			(cast (Lib.current.getChildAt(0), Main)).setFPSCap(FlxG.save.data.fpsCap);
+			currentColor++;
+			skippedFrames = 0;
+		}
+		else
+			skippedFrames++;
+
+		if (FlxG.stage.frameRate != FlxG.save.data.fpsCap && FlxG.save.data.fpsCap <= 1000)
+			FlxG.stage.frameRate = FlxG.save.data.fpsCap;
+
+		if(FlxG.keys.justPressed.F11)
+			FlxG.fullscreen = !FlxG.fullscreen;
 
 		super.update(elapsed);
 	}

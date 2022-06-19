@@ -59,6 +59,9 @@ class OptionsMenu extends MusicBeatState
 			#if desktop
 			new ReplayOption("View replays"),
 			#end
+			#if sys
+			new CacheShit("Caches tons of assets."),
+			#end
 		])
 		
 	];

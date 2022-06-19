@@ -78,11 +78,11 @@ class Main extends Sprite
 		}
 
 		#if cpp
-		initialState = Caching;
 		game = new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen);
 		#else
 		game = new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen);
 		#end
+		
 		addChild(game);
 		
 		#if !mobile
@@ -94,9 +94,9 @@ class Main extends Sprite
 		#end
 	}
 
-	var game:FlxGame;
+	public var game:FlxGame;
 
-	var fpsCounter:FPS;
+	public static var fpsCounter:FPS;
 
 	public function toggleFPS(fpsEnabled:Bool):Void {
 		fpsCounter.visible = fpsEnabled;
@@ -105,16 +105,6 @@ class Main extends Sprite
 	public function changeFPSColor(color:FlxColor)
 	{
 		fpsCounter.textColor = color;
-	}
-
-	public function setFPSCap(cap:Float)
-	{
-		openfl.Lib.current.stage.frameRate = cap;
-	}
-
-	public function getFPSCap():Float
-	{
-		return openfl.Lib.current.stage.frameRate;
 	}
 
 	public function getFPS():Float

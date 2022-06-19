@@ -249,14 +249,25 @@ class Alphabet extends FlxSpriteGroup
 		}, splitWords.length);
 	}
 
-	override function update(elapsed:Float)
-	{
+	public var fixedUpdateTimer:Float = 0.0;
+
+	function fixedUpdate(elapsed:Float) {
 		if (isMenuItem)
 		{
 			var scaledY = FlxMath.remapToRange(targetY, 0, 1, 0, 1.3);
 
-			y = FlxMath.lerp(y, (scaledY * 120) + (FlxG.height * 0.48), 0.30);
-			x = FlxMath.lerp(x, (targetY * 20) + 90, 0.30);
+			y = FlxMath.lerp(y, (scaledY * 120) + (FlxG.height * 0.48), 0.30 / 2);
+			x = FlxMath.lerp(x, (targetY * 20) + 90, 0.30 / 2);
+		}
+	}
+
+	override function update(elapsed:Float)
+	{
+		fixedUpdateTimer += elapsed;
+
+		if(fixedUpdateTimer >= 1 / 120) {
+			fixedUpdate(fixedUpdateTimer);
+			fixedUpdateTimer = 0;
 		}
 
 		super.update(elapsed);

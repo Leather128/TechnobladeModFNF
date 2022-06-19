@@ -40,7 +40,7 @@ class KadeEngineData
 		if (FlxG.save.data.fpsCap == null)
 			FlxG.save.data.fpsCap = 120;
 
-		if (FlxG.save.data.fpsCap > 285 || FlxG.save.data.fpsCap < 60)
+		if (FlxG.save.data.fpsCap > 1000 || FlxG.save.data.fpsCap < 30)
 			FlxG.save.data.fpsCap = 120; // baby proof so you can't hard lock ur copy of kade engine
 		
 		if (FlxG.save.data.scrollSpeed == null)
@@ -93,6 +93,9 @@ class KadeEngineData
 
 		if (FlxG.save.data.optimize == null)
 			FlxG.save.data.optimize = false;
+
+		if (FlxG.save.data.cacheShit == null)
+			FlxG.save.data.cacheShit = false;
 		
 		var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 		
@@ -100,10 +103,9 @@ class KadeEngineData
 
 		Conductor.recalculateTimings();
 		PlayerSettings.player1.controls.loadKeyBinds();
-		KeyBinds.keyCheck();
 
 		Main.watermarks = FlxG.save.data.watermark;
 
-		(cast (Lib.current.getChildAt(0), Main)).setFPSCap(FlxG.save.data.fpsCap);
+		FlxG.stage.frameRate = FlxG.save.data.fpsCap;
 	}
 }

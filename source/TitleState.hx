@@ -23,7 +23,6 @@ import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
-import io.newgrounds.NG;
 import lime.app.Application;
 import openfl.Assets;
 
@@ -50,6 +49,8 @@ class TitleState extends MusicBeatState
 	var curWacky:Array<String> = [];
 
 	var wackyImage:FlxSprite;
+
+	static var cached:Bool = false;
 
 	override public function create():Void
 	{
@@ -80,25 +81,21 @@ class TitleState extends MusicBeatState
 
 		curWacky = FlxG.random.getObject(getIntroTextShit());
 
-		trace('hello');
-
 		// DEBUG BULLSHIT
 
 		super.create();
-
-		// NGio.noLogin(APIStuff.API);
-
-		#if ng
-		var ng:NGio = new NGio(APIStuff.API, APIStuff.EncKey);
-		trace('NEWGROUNDS LOL');
-		#end
 
 		FlxG.save.bind('technomod', 'leather128andronezkj15');
 
 		KadeEngineData.initSave();
 
-		// var file:SMFile = SMFile.loadFile("file.sm");
-		// this was testing things
+		#if sys
+		if(!cached && FlxG.save.data.cacheShit)
+		{
+			cached = true;
+			FlxG.switchState(new Caching());
+		}
+		#end
 		
 		Highscore.load();
 
@@ -116,16 +113,10 @@ class TitleState extends MusicBeatState
 				StoryMenuState.weekUnlocked[0] = true;
 		}
 
-		#if FREEPLAY
-		FlxG.switchState(new FreeplayState());
-		#elseif CHARTING
-		FlxG.switchState(new ChartingState());
-		#else
 		new FlxTimer().start(1, function(tmr:FlxTimer)
 		{
 			startIntro();
 		});
-		#end
 	}
 
 	var logoBl:FlxSprite;
@@ -269,14 +260,6 @@ class TitleState extends MusicBeatState
 
 		if (pressedEnter && !transitioning && skippedIntro)
 		{
-			#if !switch
-			NGio.unlockMedal(60960);
-
-			// If it's Friday according to da clock
-			if (Date.now().getDay() == 5)
-				NGio.unlockMedal(61034);
-			#end
-
 			if (FlxG.save.data.flashing)
 				titleText.animation.play('press');
 

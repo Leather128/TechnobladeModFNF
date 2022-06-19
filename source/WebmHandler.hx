@@ -15,9 +15,7 @@ class WebmHandler
 	public var io:WebmIo;
 	public var initialized:Bool = false;
 	
-	public function new()
-	{
-	}
+	public function new() {}
 	
 	public function source(?vPath:String):Void
 	{

@@ -35,9 +35,8 @@ class Caching extends MusicBeatState
         FlxG.worldBounds.set(0,0);
 
         text = new FlxText(FlxG.width / 2, FlxG.height / 2 + 300,0,"Loading...");
-        text.size = 34;
-        text.alignment = FlxTextAlign.CENTER;
-        text.alpha = 0;
+        text.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, OUTLINE, FlxColor.BLACK);
+        text.borderSize = 1.5;
 
         kadeLogo = new FlxSprite(FlxG.width / 2, FlxG.height / 2).loadGraphic(Paths.image('KadeEngineLogo'));
         kadeLogo.x -= kadeLogo.width / 2;
@@ -48,6 +47,11 @@ class Caching extends MusicBeatState
 
         kadeLogo.alpha = 0;
 
+        var bg = new FlxSprite().loadGraphic(openfl.display.BitmapData.fromFile(FileSystem.absolutePath("assets/technoWeek1/images/lmanburg/sky-in-terms-of-atmosphere-sky-and-not-the-fangirl.png")));
+        bg.screenCenter();
+        bg.alpha = 0.75;
+
+        add(bg);
         add(kadeLogo);
         add(text);
 
@@ -57,7 +61,6 @@ class Caching extends MusicBeatState
             cache();
         });
 
-
         super.create();
     }
 
@@ -65,40 +68,43 @@ class Caching extends MusicBeatState
 
     override function update(elapsed) 
     {
+        if(done != 0 && toBeDone != 0)
+            kadeLogo.alpha = HelperFunctions.truncateFloat(done / toBeDone * 100,2) / 100;
 
-        if (toBeDone != 0 && done != toBeDone)
-        {
-            var alpha = HelperFunctions.truncateFloat(done / toBeDone * 100,2) / 100;
-            kadeLogo.alpha = alpha;
-            text.alpha = alpha;
-            text.text = "Loading... (" + done + "/" + toBeDone + ")";
-        }
+        text.text = "Loading... (" + done + "/" + toBeDone + ")";
+        text.screenCenter(X);
 
         super.update(elapsed);
     }
 
+    public static var images:Array<String> = [];
+    public static var music:Array<String> = [];
+
+    public static var graphics:Array<flixel.graphics.FlxGraphic> = [];
+    public static var sounds:Array<flixel.system.FlxSound> = [];
 
     function cache()
     {
-
-        var images = [];
-        var music = [];
-
         trace("caching images...");
+        cacheDirectory("assets/images", ".png", images);
 
-        for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/shared/images/characters")))
-        {
-            if (!i.endsWith(".png"))
-                continue;
-            images.push(i);
-        }
+        trace("caching shared/images...");
+        cacheDirectory("assets/shared/images", ".png", images);
+
+        trace("caching technoWeek1/images...");
+        cacheDirectory("assets/technoWeek1/images", ".png", images);
+
+        trace("caching technoWeek2/images...");
+        cacheDirectory("assets/technoWeek2/images", ".png", images);
 
         trace("caching music...");
+        cacheDirectory("assets/music", ".ogg", music);
 
-        for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/songs")))
-        {
-            music.push(i);
-        }
+        trace("caching songs...");
+        cacheDirectory("assets/songs", ".ogg", music);
+
+        trace("caching technoWeek1/sounds...");
+        cacheDirectory("assets/technoWeek1/sounds", ".ogg", music);
 
         toBeDone = Lambda.count(images) + Lambda.count(music);
 
@@ -106,17 +112,27 @@ class Caching extends MusicBeatState
 
         for (i in images)
         {
-            var replaced = i.replace(".png","");
-            FlxG.bitmap.add(Paths.image("characters/" + replaced,"shared"));
-            trace("cached " + replaced);
+            var bitmap = openfl.display.BitmapData.fromFile(FileSystem.absolutePath(i));
+
+            var graphic = FlxG.bitmap.add(bitmap);
+            graphic.persist = true;
+            graphics.push(graphic);
+
+            trace("cached " + i + " [" + done + "]");
+
             done++;
         }
 
         for (i in music)
         {
-            FlxG.sound.cache(Paths.inst(i));
-            FlxG.sound.cache(Paths.voices(i));
-            trace("cached " + i);
+            var sound = openfl.media.Sound.fromFile(FileSystem.absolutePath(i));
+
+            var sound = FlxG.sound.load(sound);
+            sound.persist = true;
+            sounds.push(sound);
+
+            trace("cached " + i + " [" + done + "]");
+
             done++;
         }
 
@@ -125,4 +141,20 @@ class Caching extends MusicBeatState
         FlxG.switchState(new TitleState());
     }
 
+    function cacheDirectory(relPath:String, fileExtension:String, array:Array<String>) {
+        for (i in FileSystem.readDirectory(FileSystem.absolutePath(relPath)))
+        {
+            if(FileSystem.isDirectory(FileSystem.absolutePath(relPath + "/" + i)))
+            {
+                cacheDirectory(relPath + "/" + i, fileExtension, array);
+
+                continue;
+            }
+
+            if (!i.endsWith(fileExtension))
+                continue;
+            
+            array.push(relPath + "/" + i);
+        }
+    }
 }

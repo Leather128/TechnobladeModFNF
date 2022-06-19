@@ -187,15 +187,12 @@ class StoryMenuState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-		// scoreText.setFormat('VCR OSD Mono', 32);
 		lerpScore = Math.floor(FlxMath.lerp(lerpScore, intendedScore, 0.5));
 
 		scoreText.text = "WEEK SCORE:" + lerpScore;
 
 		txtWeekTitle.text = weekNames[curWeek].toUpperCase();
 		txtWeekTitle.x = FlxG.width - (txtWeekTitle.width + 10);
-
-		// FlxG.watch.addQuick('font', scoreText.font);
 
 		difficultySelectors.visible = weekUnlocked[curWeek];
 
@@ -303,7 +300,6 @@ class StoryMenuState extends MusicBeatState
 			PlayState.isStoryMode = true;
 			selectedWeek = true;
 
-
 			PlayState.storyDifficulty = curDifficulty;
 
 			var poop:String = Highscore.formatSong(PlayState.storyPlaylist[0], curDifficulty);
@@ -330,6 +326,9 @@ class StoryMenuState extends MusicBeatState
 			curDifficulty = 2;
 		if (curDifficulty > 2)
 			curDifficulty = 1;
+
+		if(curWeek == 1)
+			curDifficulty = 2;
 
 		sprDifficulty.offset.x = 0;
 
@@ -381,6 +380,8 @@ class StoryMenuState extends MusicBeatState
 		}
 
 		FlxG.sound.play(Paths.sound('scrollMenu'));
+
+		changeDifficulty();
 
 		updateText();
 	}

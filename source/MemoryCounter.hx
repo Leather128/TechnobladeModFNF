@@ -31,7 +31,11 @@ class MemoryCounter extends TextField
 
 	private function onEnter(_)
 	{	
-		var mem:Float = Math.round(System.totalMemory / 1024 / 1024 * 100)/100;
+		var mem:Float = Math.round(System.totalMemory / 1024 / 1024 * 100) / 100;
+
+		if(mem != Math.abs(mem))
+			mem = 2048 + (2048 - Math.abs(mem));
+
 		if (mem > memPeak) memPeak = mem;
 
 		if (visible)

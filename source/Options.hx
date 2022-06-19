@@ -380,9 +380,6 @@ class ScoreScreen extends Option
 	}
 }
 
-
-
-
 class FPSCapOption extends Option
 {
 	public function new(desc:String)
@@ -403,26 +400,29 @@ class FPSCapOption extends Option
 	}
 	
 	override function right():Bool {
-		if (FlxG.save.data.fpsCap >= 290)
+		if (FlxG.save.data.fpsCap >= 1000)
 		{
-			FlxG.save.data.fpsCap = 290;
-			(cast (Lib.current.getChildAt(0), Main)).setFPSCap(290);
+			FlxG.save.data.fpsCap = 1000;
+			FlxG.stage.frameRate = 1000;
 		}
 		else
 			FlxG.save.data.fpsCap = FlxG.save.data.fpsCap + 10;
-		(cast (Lib.current.getChildAt(0), Main)).setFPSCap(FlxG.save.data.fpsCap);
+
+		FlxG.stage.frameRate = FlxG.save.data.fpsCap;
 
 		return true;
 	}
 
 	override function left():Bool {
-		if (FlxG.save.data.fpsCap > 290)
-			FlxG.save.data.fpsCap = 290;
-		else if (FlxG.save.data.fpsCap < 60)
-			FlxG.save.data.fpsCap = Application.current.window.displayMode.refreshRate;
+		if (FlxG.save.data.fpsCap > 1000)
+			FlxG.save.data.fpsCap = 1000;
+		else if (FlxG.save.data.fpsCap < 30)
+			FlxG.save.data.fpsCap = 30;
 		else
 			FlxG.save.data.fpsCap = FlxG.save.data.fpsCap - 10;
-		(cast (Lib.current.getChildAt(0), Main)).setFPSCap(FlxG.save.data.fpsCap);
+
+		FlxG.stage.frameRate = FlxG.save.data.fpsCap;
+
 		return true;
 	}
 
@@ -697,4 +697,37 @@ class CamZoomOption extends Option
 	{
 		return "Camera Zoom " + (!FlxG.save.data.camzoom ? "off" : "on");
 	}
+}
+
+class CacheShit extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+	
+	public override function press():Bool
+	{
+		FlxG.save.data.cacheShit = !FlxG.save.data.cacheShit;
+		display = updateDisplay();
+
+		#if sys
+		if(!FlxG.save.data.cacheShit)
+		{
+			for(graphic in Caching.graphics)
+				graphic.persist = false;
+
+			for(sound in Caching.sounds)
+				sound.persist = false;
+
+			openfl.system.System.gc();
+		}
+		#end
+
+		return true;
+	}
+	
+	private override function updateDisplay():String
+		return "Caching " + (FlxG.save.data.cacheShit ? "on" : "off");
 }

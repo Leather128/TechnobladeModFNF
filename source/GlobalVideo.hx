@@ -1,6 +1,7 @@
 package;
 
 #if !mac
+import flixel.FlxG;
 import openfl.Lib;
 
 class GlobalVideo
@@ -48,8 +49,8 @@ class GlobalVideo
 		var stageWidth:Int = Lib.current.stage.stageWidth;
 		var stageHeight:Int = Lib.current.stage.stageHeight;
 
-		var width:Float = GameDimensions.width;
-		var height:Float = GameDimensions.height;
+		var width:Float = FlxG.width;
+		var height:Float = FlxG.height;
 		
 		//trace("AH: " + stageWidth);
 		//trace(width);
